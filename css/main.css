@@ -67,6 +67,11 @@ body{
     text-align: center;
 }
 
+audio{
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 
 
