@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 	setInterval(function(){ 
 		color_change() 
-	}, 1000);
+	}, 2000);
 });
 
 
