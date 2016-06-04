@@ -106,7 +106,8 @@ nav{
 
 .column {
   background-color:white;
-  width:500px;
+  width:31vw;
+  min-width: 400px;
   display: inline-block;
   transition: 300ms;
   margin:20px  0 0 20px;
