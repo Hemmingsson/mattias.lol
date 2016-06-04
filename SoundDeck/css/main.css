@@ -139,6 +139,8 @@ nav{
     height: 50px;
     position: absolute;
     top: 50%;
+    background-position: center center;
+    background-size: cover;
     transform: translateY(-50%);
     margin: 0;
 }

@@ -1,6 +1,6 @@
 // settings
 var clientId = '3704e007c260afa92227c9006034af90';
-var accounts = ["timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
+var accounts = ["katermukke","rinsefm","platform", "studiobarnhus","timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
 var audioPlayer = new Audio();
 var lazyload
 $(function() {
@@ -45,11 +45,23 @@ $(function() {
     var column_template = $('#column_template').html();
 
 
-
     var fetchTracks = function(columnElement) {
         var userId = $(columnElement).attr('data-userid');
-        SC.get('/users/' + userId + '/favorites').then(function(tracks) {
-            $.each(tracks, function(i, track) {
+        SC.get('/users/' + userId + '/tracks').then(function(tracks) {
+            if(tracks.length == 0){
+                SC.get('/users/' + userId + '/favorites').then(function(tracks) {
+                $.each(tracks, function(i, track) {
+                    // Make data readable t300x300
+                    track.timeAgo = $.timeago(track.created_at);
+                    track.durationHuman = formatTime(millisecondsToHuman(track.duration), true)
+                    //track.artwork_url =    track.artwork_url.replace('large.jpg', 't300x300.jpg')
+
+                    var track = Mustache.render(track_template, track);
+                    columnElement.find(".tracks").append(track);
+                });
+            });
+            } else{
+                $.each(tracks, function(i, track) {
 
                 // Make data readable t300x300
                 track.timeAgo = $.timeago(track.created_at);
@@ -59,6 +71,8 @@ $(function() {
                 var track = Mustache.render(track_template, track);
                 columnElement.find(".tracks").append(track);
             });
+            }
+            
             lazyload.revalidate()
             columnElement.removeClass("hidden");
             console.timeEnd("time");
@@ -162,24 +176,6 @@ $(function() {
         progressbar_buffer.width(progressbar_buffer_width + "%")
     }
 
-    var confirmOnPageExit = function (e) 
-{
-    // If we haven't been passed the event get the window.event
-    e = e || window.event;
-
-    var message = 'Any text will block the navigation and display a prompt';
-
-    // For IE6-8 and Firefox prior to version 4
-    if (e) 
-    {
-        e.returnValue = message;
-    }
-
-    // For Chrome, Safari, IE8+ and Opera 12+
-    return message;
-};
-
-confirmOnPageExit()
 
     audioPlayer.addEventListener('progress', getPercentProg, false);
 
@@ -200,6 +196,7 @@ confirmOnPageExit()
 
 
     $(document).on('click', '.track', function() {
+        $(".play_btn").removeClass('is_paused')
         resetPlayer()
         var parentFeed = $(this).parents(".column")
         var trackId = $(this).attr('data-trackid');
@@ -232,67 +229,3 @@ confirmOnPageExit()
 
 
 
-/*
-var clientId = '3704e007c260afa92227c9006034af90';
-
-
-$(function() {
-
-
-    var track_template = $('#track_template').html();
-    var column_template = $('#column_template').html();
-
-    SC.initialize({
-        client_id: clientId,
-    });
-
-    var createcolumn = function(user_data) {
-
-        var column = Mustache.render(column_template, columnData);
-        $(".column_scroll").append(column);
-
-        console.log("column");
-        return SC.get('/users/' + data.id + '/favorites');
-
-    };
-
-    var appendTracks = function(tracks) {
-        console.log(tracks);
-        var column = $('.column').last().find(".tracks")
-        
-        $.each(tracks, function( i, track ){
-            var track = Mustache.render(track_template, track);
-            column.append(track);
-        });
-
-        
-    };
-
-    var resolveUser = function(username) {
-        var userUrl = 'http://soundcloud.com/' + username
-        SC.resolve(userUrl).then(createcolumn).then(appendTracks);
-    };
-
-
-    $.each([ "tjorvens", "paulahalldin", "viktor-rohlin", "kornel", "platform", "lukiss", "mountliberationunlimited" ], function( index, value ) {
-      resolveUser(value)
-    });
-
-    $('#resolve').click(function() {
-        if ($('#username').val().length > 0) {
-            var val = $('#username').val()
-            resolveUser(val)
-        }
-    });
-
-    $('#resolve').keypress(function (e) {
-      if (e.which == 13) {
-       if ($('#username').val().length > 0) {
-            var val = $('#username').val()
-            resolveUser(val)
-        }
-        return false;
-      }
-    });
-
-});*/
