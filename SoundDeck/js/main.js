@@ -4,11 +4,7 @@ var accounts = ["timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldi
 var audioPlayer = new Audio();
 var lazyload
 $(function() {
-    var lazyload = new Blazy({ // eslint-disable-line
-        selector: '.lazy_load',
-        successClass: 'lazy_loaded',
-        container: '.lazy_wrap'
-    })
+
     var millisecondsToHuman = function(milliseconds) {
         var date = new Date(null);
         date.setMilliseconds(milliseconds);
@@ -166,6 +162,24 @@ $(function() {
         progressbar_buffer.width(progressbar_buffer_width + "%")
     }
 
+    var confirmOnPageExit = function (e) 
+{
+    // If we haven't been passed the event get the window.event
+    e = e || window.event;
+
+    var message = 'Any text will block the navigation and display a prompt';
+
+    // For IE6-8 and Firefox prior to version 4
+    if (e) 
+    {
+        e.returnValue = message;
+    }
+
+    // For Chrome, Safari, IE8+ and Opera 12+
+    return message;
+};
+
+confirmOnPageExit()
 
     audioPlayer.addEventListener('progress', getPercentProg, false);
 
@@ -201,6 +215,7 @@ $(function() {
         track_title.text(trackName)
         track_owner.text(trackOwner)
         $('.progressbar_progress, .progressbar_buffer').css("background-color", color)
+        $('.play_btn i').css("color", color)
         streamUrl = "https://api.soundcloud.com/tracks/" + trackId + "/stream?client_id=" + clientId
         audioPlayer.src = streamUrl
         audioPlayer.play()

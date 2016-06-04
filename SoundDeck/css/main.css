@@ -303,7 +303,7 @@ nav{
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  border: 1px solid black;
+  border: 1px solid #d1d4da;
   position: absolute;
   cursor: pointer;
   z-index: 200;
@@ -317,6 +317,7 @@ nav{
   transform: translate(-50%, -50%);
   transition: all 200ms ease-in-out;
   opacity: 0;
+  color: #d1d4da;
 }
 
 .play_btn i.fa-play{
