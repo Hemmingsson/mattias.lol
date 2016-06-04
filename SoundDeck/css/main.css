@@ -108,6 +108,7 @@ nav{
   background-color:white;
   width:31vw;
   min-width: 400px;
+  max-width: 700px;
   display: inline-block;
   transition: 300ms;
   margin:20px  0 0 20px;
