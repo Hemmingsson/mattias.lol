@@ -416,7 +416,7 @@ nav {
 }
 
 .seek_active .progressbar_seek{
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 
