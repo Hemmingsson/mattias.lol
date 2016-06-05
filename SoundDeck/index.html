@@ -21,7 +21,8 @@
             </div>
             <div class="progressbar_seek">
                 <div id="time_tooltip">
-                    
+                    <div id="tooltip_line"></div>
+                    <p></p>
                 </div>
             </div>
             <div class="progressbar">
@@ -36,7 +37,25 @@
         
         <section class="column_wrap">
             <div class="column_scroll">
-                <div class="column help_card"></div>
+                <div class="column help_card">
+                
+                    <div class="header">
+                        
+                            <input type="search" id="user_search" placeholder="Click to add account">
+
+                    
+                    </div>
+                        
+                  
+                    <div class="tracks">
+                    <div class="track"></div>
+                    <div class="track"></div>
+                    <div class="track"></div> 
+                    <div class="track"></div>
+                    <div class="track"></div>
+                    <div class="track"></div> 
+                    </div>
+                </div>
             </section>
             <script id="column_template" type="text/html">
             <div class="column" data-userid="{{id}}">

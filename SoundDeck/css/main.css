@@ -387,13 +387,12 @@ nav {
   display: none;
 }
 
-#time_tooltip:after{
-  content: "";
+#tooltip_line{
   width: 1px;
   height: 100px;
-  left: 50%;
-  top: 25px;
-  background-color: red;
+  left: 0;
+  top: 0;
+  background-color: currentColor;
   position: absolute;
 }
 
@@ -469,6 +468,30 @@ nav {
   margin-top: 13px;
   opacity: .6;
 }
+
+.help_card input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #454545;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+
+.help_card .tracks{
+  overflow: hidden;
+}
+.help_card .track{
+  cursor: auto;
+  opacity: .3;
+}
+
+
 
 /* ==========================================================================
    Media Queries

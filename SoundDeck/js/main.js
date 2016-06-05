@@ -1,6 +1,7 @@
 // settings
 var clientId = '3704e007c260afa92227c9006034af90';
 var accounts = ["moody-official-1", "svensk-rap", "clubberia", "rinsefm", "platform", "studiobarnhus", "timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
+var accounts2 = ["groove-magazin", "ostgutton-official", "mrtophat", "babastiltz", "tjorvens", "paulahalldin"]
 var audioPlayer = new Audio();
 //audioPlayer.volume = 0
 
@@ -109,9 +110,9 @@ $(function() {
     });
     var me = ["tjorvens"]
     var eachAccount = function() {
-        if (accounts[0]) {
-            new userFeed(accounts[0])
-            accounts.splice(0, 1);
+        if (accounts2[0]) {
+            new userFeed(accounts2[0])
+            accounts2.splice(0, 1);
         }
     }
 
@@ -120,18 +121,14 @@ $(function() {
     eachAccount()
 
 
-    $('#resolve').click(function() {
-        if ($('#username').val().length > 0) {
-            var username = $('#username').val()
-            new userFeed(username)
-        }
-    });
 
-    $('#resolve').keypress(function(e) {
+
+    $('#user_search').keypress(function(e) {
         if (e.which == 13) {
-            if ($('#username').val().length > 0) {
-                var username = $('#username').val()
+            if ($('#user_search').val().length > 0) {
+                var username = $('#user_search').val()
                 new userFeed(username)
+                $('#user_search').val("")
             }
             return false;
         }
