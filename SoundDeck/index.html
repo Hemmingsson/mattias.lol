@@ -13,28 +13,25 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-    
-            <section class="player_wrap">
-                <div class="play_btn">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-pause" aria-hidden="true"></i>
-                </div>
-                <div class="progressbar">
-                    <small id="time_elapsed">00:00:00</small>
-                    <small id="time_total">00:00:00</small>
-                    <small id="track_title"></small>
-                    <small id="track_owner"></small>
-                  <div class="progressbar_progress"></div>
-                  <div class="progressbar_buffer"></div>
-                </div>
-            </section>
-            
-            <section class="column_wrap">
-                <div class="column_scroll">
-                    <div class="column help_card" data-userid="{{id}}">
-
-                </div>
-                
+        
+        <section class="player_wrap">
+            <div class="play_btn">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                <i class="fa fa-pause" aria-hidden="true"></i>
+            </div>
+            <div class="progressbar">
+                <small id="time_elapsed">00:00:00</small>
+                <small id="time_total">00:00:00</small>
+                <small id="track_title"></small>
+                <small id="track_owner"></small>
+                <div class="progressbar_progress"></div>
+                <div class="progressbar_buffer"></div>
+            </div>
+        </section>
+        
+        <section class="column_wrap">
+            <div class="column_scroll">
+                <div class="column help_card"></div>
             </section>
             <script id="column_template" type="text/html">
             <div class="column" data-userid="{{id}}">
@@ -57,24 +54,24 @@
                 <div class="track_wave" style="background-image: url({{waveform_url}})" data-src="{{waveform_url}}"></div>
                 <div class="track_top">
                     
-            
+                    
                     <figure class=""  style="background-image: url({{artwork_url}})" data-src="{{artwork_url}}">
                     </figure>
                     <div class="track_information">
-                         
+                        
                         <p>{{title}}</p>
                         <small>{{durationHuman}}</small>
                     </div>
                 </div>
                 <div class="track_metadata">
-                   
-       
+                    
+                    
                     <small class="time_ago">{{timeAgo}}</small>
-                        
-               
+                    
+                    
                     <!-- This section gets pushed to the right side-->
                     <div class="track_interactions">
-              
+                        
                         <small class="track_likes"><i class="fa fa-heart" aria-hidden="true"></i> {{favoritings_count}}</small>
                     </div>
                 </div>
@@ -85,7 +82,7 @@
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
             
-              <script src="http://timeago.yarp.com/jquery.timeago.js" ></script>
+            <script src="http://timeago.yarp.com/jquery.timeago.js" ></script>
             
             <script src="https://connect.soundcloud.com/sdk/sdk-3.1.1.js"></script>
             <script src="js/main.js"></script>

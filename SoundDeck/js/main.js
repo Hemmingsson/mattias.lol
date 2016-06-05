@@ -3,7 +3,12 @@ var clientId = '3704e007c260afa92227c9006034af90';
 var accounts = ["moody-official-1","svensk-rap","clubberia","rinsefm","platform", "studiobarnhus","timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
 var audioPlayer = new Audio();
 var lazyload
+
 $(function() {
+
+    SC.initialize({
+        client_id: clientId,
+    });
 
     var millisecondsToHuman = function(milliseconds) {
         var date = new Date(null);
@@ -19,8 +24,6 @@ $(function() {
         } else {
             return time + "h"
         }
-
-
     }
 
     function convert_range(value, r1, r2) {
@@ -37,13 +40,8 @@ $(function() {
         return array;
     }
 
-    SC.initialize({
-        client_id: clientId,
-    });
-
     var track_template = $('#track_template').html();
     var column_template = $('#column_template').html();
-
 
     var fetchTracks = function(columnElement) {
         var userId = $(columnElement).attr('data-userid');
@@ -66,8 +64,6 @@ $(function() {
                     columnElement.find(".tracks").append(track);
                 });
                 console.log(frequenzy / 1000000000 / 7);
-
-
             });
             } else{
                 var frequenzy = 0
@@ -92,7 +88,6 @@ $(function() {
         })
     };
 
-
     var renderColumn = function(userData) {
         console.log
         userData.backgroundColor = colorByHashCode(userData.username)
@@ -101,7 +96,6 @@ $(function() {
         $(columnElement).insertBefore( ".help_card" );
         return columnElement;
     };
-
 
     var userFeed = function(username) {
         console.time("time");
@@ -112,8 +106,7 @@ $(function() {
             .then(fetchTracks)
     };
 
-
-    function colorByHashCode(value) {
+    var colorByHashCode = function (value) {
         return value.getHashCode().intToHSL()
     }
     String.prototype.getHashCode = function() {
@@ -129,8 +122,6 @@ $(function() {
         var shortened = this % 360;
         return "hsl(" + shortened + ",90%,60%)";
     };
-
-
 
     $.each(shuffleArray(accounts), function(index, username) {
         new userFeed(username)
@@ -152,7 +143,6 @@ $(function() {
             return false;
         }
     });
-
 
     var progressbar = $(".progressbar")
     var progressbar_progress = $(".progressbar_progress")
@@ -177,7 +167,6 @@ $(function() {
         } else {
             $(".play_btn").addClass('is_paused')
         }
-
     }
 
     $(audioPlayer).bind('timeupdate', updatePlayer);
@@ -190,7 +179,6 @@ $(function() {
         progressbar_buffer.width(progressbar_buffer_width + "%")
     }
 
-
     audioPlayer.addEventListener('progress', getPercentProg, false);
 
     $(document).on('click', '.play_btn', function() {
@@ -200,14 +188,12 @@ $(function() {
         } else {
             audioPlayer.pause()
         }
-
     });
 
     var resetPlayer = function() {
         progressbar_buffer.width(0)
         progressbar_progress.width(0)
     }
-
 
     $(document).on('click', '.track', function() {
         $(".play_btn").removeClass('is_paused')
@@ -220,7 +206,6 @@ $(function() {
         playTrack(trackId, trackDuration, parentFeed, trackName, trackOwner)
     });
 
-
     var playTrack = function(trackId, trackDuration, parentFeed, trackName, trackOwner) {
         color = parentFeed.find('.header').css("background-color")
         track_title.text(trackName)
@@ -231,13 +216,6 @@ $(function() {
         audioPlayer.src = streamUrl
         audioPlayer.play()
     }
-
-
-
-
-
-
-
 });
 
 
