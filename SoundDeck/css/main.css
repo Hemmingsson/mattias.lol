@@ -303,6 +303,7 @@ nav {
   padding: 10px 20px;
   border-top: 1px solid #f1f2f4;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .play_btn {
@@ -364,6 +365,64 @@ nav {
 .progressbar_buffer {
   opacity: .2;
 }
+
+.progressbar_seek {
+    position: absolute;
+    top: 0;
+    left: 90px;
+    width: calc(100vw - 120px);
+    height: 100%;
+    z-index: 200;
+}
+
+
+#time_tooltip{
+  height: 15px;
+  display: inline-block;
+  color: black;
+  position: absolute;
+  transform: translateX(-50%);
+  opacity: 0;
+  top: 5px;
+  display: none;
+}
+
+#time_tooltip:after{
+  content: "";
+  width: 1px;
+  height: 100px;
+  left: 50%;
+  top: 25px;
+  background-color: red;
+  position: absolute;
+}
+
+
+.seek_active #time_elapsed,
+.seek_active #time_total,
+.seek_active #track_title,
+.seek_active #track_owner{
+  opacity: 0;
+}
+
+.seek_active #time_elapsed{
+  display: none;
+}
+
+.seek_active #time_tooltip,
+.seek_active #time_tooltip:after{
+  opacity: 1;
+  display: inline-block;
+}
+
+.seek_active .progressbar_seek{
+  cursor: ew-resize;
+}
+
+
+
+
+
 
 #time_total,
 #time_elpased {
