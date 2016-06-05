@@ -1,7 +1,7 @@
 // settings
 var clientId = '3704e007c260afa92227c9006034af90';
 var accounts = ["moody-official-1", "svensk-rap", "clubberia", "rinsefm", "platform", "studiobarnhus", "timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
-var accounts2 = ["groove-magazin", "ostgutton-official", "mrtophat", "babastiltz", "tjorvens", "paulahalldin"]
+var accounts2 = ["groove-magazin", "ostgutton-official", "clubberia", "babastiltz", "tjorvens", "paulahalldin"]
 var audioPlayer = new Audio();
 //audioPlayer.volume = 0
 
@@ -43,6 +43,9 @@ $(function() {
 
     var track_template = $('#track_template').html();
     var column_template = $('#column_template').html();
+    var track_msg_template = $('#track_msg_template').html();
+
+    
 
     var fetchTracks = function(data) {
         var column_element = $(data[0])
@@ -65,6 +68,15 @@ $(function() {
                 $(column_element).find(".tracks").append(track);
 
             });
+            console.log(tracks);
+            if (tracks.length === 0) {
+                console.log("hej");
+                var data = {
+                    msg: "No public tracks Found",
+                }
+                var track = Mustache.render(track_msg_template, data);
+                $(column_element).find(".tracks").append(track);
+            }
             eachAccount()
         });
 
@@ -134,7 +146,7 @@ $(function() {
         }
     });
     var player_wrap = $(".player_wrap")
-    
+
     var progressbar_seek = $(".progressbar_seek")
     var progressbar = $(".progressbar")
     var time_tooltip = $("#time_tooltip")
@@ -173,33 +185,33 @@ $(function() {
         console.log("sdsdssd");
     }
 
-    
-    
+
+
     //$(audioPlayer).bind('playing', playerLoading(false));
 
     var getPercentProg = function() {
         var endBuf = audioPlayer.buffered.end(0);
         var progressbar_buffer_width = parseInt(((endBuf / audioPlayer.duration) * 100));
         progressbar_buffer.width(progressbar_buffer_width + "%")
-        
+
     }
 
     audioPlayer.addEventListener('progress', getPercentProg, false);
 
 
     var old_time = 0
-    setInterval(function(){
+    setInterval(function() {
         var current_time = parseInt(audioPlayer.currentTime)
-        if(old_time === current_time && audioPlayer.src && !audioPlayer.paused){
+        if (old_time === current_time && audioPlayer.src && !audioPlayer.paused) {
             time_elapsed.addClass('flash')
             time_tooltip.addClass('flash')
-            
 
-        } else{
+
+        } else {
             old_time = current_time
             time_elapsed.removeClass('flash')
             time_tooltip.removeClass('flash')
-            
+
         }
     }, 1000);
 
@@ -212,27 +224,31 @@ $(function() {
         return convert_range(relX, [0, seek_element.width()], [0, audioPlayer.duration])
     }
 
-    seek_element.mousemove(function(e){
-        if(audioPlayer.duration){
-        var ra = mouseTime(e)
-        var human = millisecondsToHuman(ra * 1000)
-        $('#time_tooltip').css({
-           left:  e.pageX - seekOffset.left
-        });
-        $('#time_tooltip').text(human)
+    seek_element.mousemove(function(e) {
+        if (audioPlayer.duration) {
+            var ra = mouseTime(e)
+            var human = millisecondsToHuman(ra * 1000)
+            $('#time_tooltip').css({
+                left: e.pageX - seekOffset.left
+            });
+            $('#time_tooltip').text(human)
         }
-        
-    }).click(function(e){
-        
+
+    }).click(function(e) {
+
         var ra = mouseTime(e)
-        audioPlayer.currentTime = ra 
-    
-        
+        audioPlayer.currentTime = ra
+
+
     });
-    progressbar_seek.hover(function(){
-        if(audioPlayer.duration){player_wrap.addClass('seek_active')}
-        }, function(){
-        if(audioPlayer.duration){player_wrap.removeClass('seek_active')}
+    progressbar_seek.hover(function() {
+        if (audioPlayer.duration) {
+            player_wrap.addClass('seek_active')
+        }
+    }, function() {
+        if (audioPlayer.duration) {
+            player_wrap.removeClass('seek_active')
+        }
     });
 
     $(document).on('click', '.play_btn', function() {
