@@ -379,6 +379,22 @@ nav {
   left: 0;
 }
 
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
+  animation-duration: 1600ms;
+  animation-iteration-count: infinite;
+}
+
 #track_title,
 #track_owner {
   position: absolute;
