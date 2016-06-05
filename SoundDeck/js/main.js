@@ -1,6 +1,6 @@
 // settings
 var clientId = '3704e007c260afa92227c9006034af90';
-var accounts = ["katermukke","rinsefm","platform", "studiobarnhus","timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
+var accounts = ["moody-official-1","svensk-rap","clubberia","rinsefm","platform", "studiobarnhus","timsweeney", "mrtophat", "babastiltz", "tjorvens", "paulahalldin", "viktor-rohlin", "kornel"]
 var audioPlayer = new Audio();
 var lazyload
 $(function() {
@@ -50,27 +50,40 @@ $(function() {
         SC.get('/users/' + userId + '/tracks').then(function(tracks) {
             if(tracks.length == 0){
                 SC.get('/users/' + userId + '/favorites').then(function(tracks) {
+                var frequenzy = 0
                 $.each(tracks, function(i, track) {
                     // Make data readable t300x300
                     track.timeAgo = $.timeago(track.created_at);
+                    var unixtime = new Date(track.created_at).getTime() / 1000
+                    //console.log(unixtime);
+
                     track.durationHuman = formatTime(millisecondsToHuman(track.duration), true)
                     //track.artwork_url =    track.artwork_url.replace('large.jpg', 't300x300.jpg')
-
+                    if(i < 7){
+                     frequenzy = frequenzy + unixtime
+                    }
                     var track = Mustache.render(track_template, track);
                     columnElement.find(".tracks").append(track);
                 });
+                console.log(frequenzy / 1000000000 / 7);
+
+
             });
             } else{
+                var frequenzy = 0
                 $.each(tracks, function(i, track) {
-
+                var unixtime = new Date(track.created_at).getTime() / 1000
                 // Make data readable t300x300
                 track.timeAgo = $.timeago(track.created_at);
                 track.durationHuman = formatTime(millisecondsToHuman(track.duration), true)
                 //track.artwork_url =    track.artwork_url.replace('large.jpg', 't300x300.jpg')
-
+                if(i < 7){
+                     frequenzy = frequenzy + unixtime
+                    }
                 var track = Mustache.render(track_template, track);
                 columnElement.find(".tracks").append(track);
             });
+                console.log(frequenzy / 1000000000);
             }
             
             lazyload.revalidate()
@@ -84,7 +97,8 @@ $(function() {
         console.log
         userData.backgroundColor = colorByHashCode(userData.username)
         var columnElement = $(Mustache.render(column_template, userData));
-        $(".column_scroll").append(columnElement)
+        //$(".column_scroll").append(columnElement)
+        $(columnElement).insertBefore( ".help_card" );
         return columnElement;
     };
 
