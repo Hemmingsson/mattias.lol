@@ -1,1 +1,43 @@
-<!doctype html><html class="no-js" lang=""> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="css/main.css"> </head> <body> <style type="text/css" media="screen"> body{width:100vw;height:100vh;text-align:center;-webkit-filter:url("#trippy");filter:url("#trippy");font-family:sans-serif;}#countdown, h2{font-size:5vw;text-align:center;}.trippy{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;-webkit-animation:trip 10s linear infinite;animation:trip 10s linear infinite;display:flex;justify-content:center;align-items:center;}@-webkit-keyframes trip{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes trip{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}}</style> <h2>När kommer Paula? 😍</h2> <section class="trippy"> <h1 id="countdown" class=""></h1> </section> <h1 id="countdown" class=""></h1> <svg xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <filter id="trippy"> <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="2" seed="1"/> <feDisplacementMap in="SourceGraphic" scale="30"/> </filter> </defs> </svg> <script type="text/javascript">var end=new Date('Aug 07 2016 18:20:00 GMT+0200 (CEST)')var _second=1000 var _minute=_second * 60 var _hour=_minute * 60 var _day=_hour * 24 var timer var neonColors=[ '#ff00ff', '#00ffff', '#00ff00', '#ffff00', '#ff0000', '#0000ff', '#7920FF', '#FD0987', '#FF3300', '#FF6EC7', '#00FF66', '#4D4DFF', '#67C8FF', '#7BFB2D', '#AAFF00', '#FF00AA', '#AA00FF', '#FF7F00', '#228DFF', '#ff6d38', '#f90000', '#fd8b25', '#25d7fb', '#7920ff', '#fe51c3', '#ff9072', '#ff63a2', '#e3e641'] function showRemaining (){var now=new Date() console.log(now) var distance=end - now if (distance < 0){clearInterval(timer) document.getElementById('countdown').innerHTML='SHE IS HERE!' return}var days=Math.floor(distance / _day) var hours=Math.floor((distance % _day) / _hour) var minutes=Math.floor((distance % _hour) / _minute) var seconds=Math.floor((distance % _minute) / _second) document.getElementById('countdown').innerHTML=days + ' days ' document.getElementById('countdown').innerHTML +=hours + ' hrs <br>' document.getElementById('countdown').innerHTML +=minutes + ' mins ' document.getElementById('countdown').innerHTML +=seconds + ' secs'}function invertColor (hexTripletColor){var color=hexTripletColor color=color.substring(1) color=parseInt(color, 16) color=0xFFFFFF ^ color color=color.toString(16) color=("000000" + color).slice(-6) color="#" + color return color}function color (){var hex=neonColors[Math.floor(Math.random() * neonColors.length)] document.body.style.backgroundColor=hex document.getElementById('countdown').style.color=invertColor(hex)}document.addEventListener('DOMContentLoaded', function (){timer=setInterval(showRemaining, 1000) setInterval(color, 100)}) </script> </body></html>
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <style type="text/css" media="screen">
+        body{width:100vw;height:100vh;text-align:center;-webkit-filter:url("#trippy");filter:url("#trippy");font-family:sans-serif;}
+        #countdown,
+        h2{font-size:5vw;text-align:center;}
+        .trippy{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;-webkit-animation:trip 10s linear infinite;animation:trip 10s linear infinite;display:flex;justify-content:center;align-items:center;}
+        @-webkit-keyframes trip{
+        0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+        100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+        }
+        @keyframes trip{
+        0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+        100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+        }
+        </style>
+        <h2>När kommer Paula? 😍</h2>
+        <section class="trippy">
+            <h1 id="countdown" class=""></h1>
+        </section>
+        <h1 id="countdown" class=""></h1>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+            <filter id="trippy">
+            <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="2" seed="1"/>
+            <feDisplacementMap in="SourceGraphic" scale="30" />
+            </filter>
+            </defs>
+        </svg>
+        <script type="text/javascript">
+        function showRemaining(){var n=new Date;console.log(n);var e=end-n;if(0>e)return clearInterval(timer),void(document.getElementById("countdown").innerHTML="SHE IS HERE!");var o=Math.floor(e/_day),t=Math.floor(e%_day/_hour),r=Math.floor(e%_hour/_minute),d=Math.floor(e%_minute/_second);document.getElementById("countdown").innerHTML=o+" days ",document.getElementById("countdown").innerHTML+=t+" hrs <br>",document.getElementById("countdown").innerHTML+=r+" mins ",document.getElementById("countdown").innerHTML+=d+" secs"}function invertColor(n){var e=n;return e=e.substring(1),e=parseInt(e,16),e=16777215^e,e=e.toString(16),e=("000000"+e).slice(-6),e="#"+e}function color(){var n=neonColors[Math.floor(Math.random()*neonColors.length)];document.body.style.backgroundColor=n,document.getElementById("countdown").style.color=invertColor(n)}var end=new Date("Aug 07 2016 18:20:00 GMT+0200 (CEST)"),_second=1e3,_minute=60*_second,_hour=60*_minute,_day=24*_hour,timer,neonColors=["#ff00ff","#00ffff","#00ff00","#ffff00","#ff0000","#0000ff","#7920FF","#FD0987","#FF3300","#FF6EC7","#00FF66","#4D4DFF","#67C8FF","#7BFB2D","#AAFF00","#FF00AA","#AA00FF","#FF7F00","#228DFF","#ff6d38","#f90000","#fd8b25","#25d7fb","#7920ff","#fe51c3","#ff9072","#ff63a2","#e3e641"];document.addEventListener("DOMContentLoaded",function(){timer=setInterval(showRemaining,1e3),setInterval(color,100)});
+        </script>
+    </body>
+</html>
