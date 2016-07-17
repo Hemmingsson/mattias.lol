@@ -22,32 +22,123 @@
         0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
         100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
         }
+        @-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-30px, 0, 0);
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-30px, 0, 0);
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+    -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(2,2,2);
+    transform: scale3d(2,2,2);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(2,2,2);
+    transform: scale3d(2,2,2);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(2,2,2);
+    transform: scale3d(2,2,2);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(2,2,2);
+    transform: scale3d(2,2,2);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;   
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+   -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
     </style>
-    <h2>När kommer Paula till Berlin? 😍</h2>
-    <section class="trippy">
+    <h2 class="shake">När flyttar Paula till Berlin? 😍</h2>
+    <section class="pulse">
         <h1 class="" id="countdown"></h1>
     </section>
     <h1 class="" id="countdown"></h1><svg version="1.1" xmlns=
     "http://www.w3.org/2000/svg">
     <defs>
         <filter id="trippy">
-            <feturbulence basefrequency="0.01" id="turbulence" numoctaves="2"
+            <feturbulence basefrequency="0.015" id="turbulence" numoctaves="1"
             seed="1"></feturbulence>
             <fedisplacementmap in="SourceGraphic" scale=
             "30"></fedisplacementmap>
         </filter>
     </defs></svg> 
     <script type="text/javascript">
+        var body;
+        var sountDown;
+
         function showRemaining() {
             var a = new Date;
-            console.log(a);
             var b = end - a;
-            if (0 > b) return clearInterval(timer), void(document.getElementById("countdown").innerHTML = "SHE IS HERE!");
+            if (0 > b) return clearInterval(timer), void(countdown.innerHTML = "SHE IS HERE!");
             var c = Math.floor(b / _day),
                 d = Math.floor(b % _day / _hour),
                 e = Math.floor(b % _hour / _minute),
                 f = Math.floor(b % _minute / _second);
-            document.getElementById("countdown").innerHTML = c + " days ", document.getElementById("countdown").innerHTML += d + " hrs <br>", document.getElementById("countdown").innerHTML += e + " mins ", document.getElementById("countdown").innerHTML += f + " secs"
+            countdown.innerHTML = c + " Dagar ", countdown.innerHTML += d + " Timmar <br>", countdown.innerHTML += e + " Minuter ", countdown.innerHTML += f + " Sekunder"
         }
 
         function invertColor(a) {
@@ -57,7 +148,7 @@
 
         function color() {
             var a = neonColors[Math.floor(Math.random() * neonColors.length)];
-            document.body.style.backgroundColor = a, document.getElementById("countdown").style.color = invertColor(a)
+            body.style.backgroundColor = a, countdown.style.color = invertColor(a)
         }
         var end = new Date("Aug 07 2016 18:20:00 GMT+0200 (CEST)"),
             _second = 1e3,
@@ -66,7 +157,9 @@
             _day = 24 * _hour,
             timer, neonColors = ["#ff00ff", "#00ffff", "#00ff00", "#ffff00", "#ff0000", "#0000ff", "#7920FF", "#FD0987", "#FF3300", "#FF6EC7", "#00FF66", "#4D4DFF", "#67C8FF", "#7BFB2D", "#AAFF00", "#FF00AA", "#AA00FF", "#FF7F00", "#228DFF", "#ff6d38", "#f90000", "#fd8b25", "#25d7fb", "#7920ff", "#fe51c3", "#ff9072", "#ff63a2", "#e3e641"];
         document.addEventListener("DOMContentLoaded", function() {
-            timer = setInterval(showRemaining, 1e3), setInterval(color, 100)
+            body = document.body
+            countdown = document.getElementById("countdown")
+            timer = setInterval(showRemaining, 1e3), setInterval(color, 1000)
         });
     </script>
 </body>
