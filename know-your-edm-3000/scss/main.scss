@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Mono');
+
+/* ==========================================================================
+   SETUP
+   ========================================================================== */
+
+/* 
+   Variabels
+   ========================================================================== */
+
+// Generla
+$gutter: 3vw;
+$border-radius: .7vw;
+
+// Colors
+$gray: #5c5c5c;
+$gray-dark: #393939;
+$gray-light: #80868c;
+
+$orange: #ec752d;
+$orange-gradient: linear-gradient(-179deg, #ec752d 0%, #cf5d17 100%);
+
+$turquose: #15706d;
+$green: #78da5a;
+$red: #ef5b5b;
+
+$semi-white: rgba(255, 255, 255, .75);
+
+// Elements specifics
+$display-color-light: #dfebe2;
+$display-color-dark: rgba(0, 0, 0, .80);
+
+$pad-gradient: radial-gradient(50% 143%, rgba(255, 255, 255, .00) 50%, rgba(0, 0, 0, .17) 100%);
+$pad-boarder: .6vw solid #969696;
+$pad-background-color: #3e3e3e;
+
+// Equelizer
+$eq-bars: 30;
+
+
+/* 
+   Mixins
+   ========================================================================== */
+
+@mixin inset {
+  box-shadow: inset -1px -1px 2px rgba(255, 255, 255, .3), inset -5px -15px 40px rgba(255, 255, 255, .1), inset 1px 1px 2px rgba(0, 0, 0, .5), inset 5px 15px 40px rgba(0, 0, 0, .2);
+}
+
+@mixin led-glow ($color) {
+  box-shadow: 0 0 1.5vw 0 rgba($color, .9), 0 0 1vw 0 rgba($color, 1) inset;
+}
+
+@mixin pad-glow ($color) {
+  border-color: $color;
+  box-shadow: 0 0 44px 0 rgba($color, .50), 0 0 5vw 0 rgba($color, .5) inset;
+  h3 {
+    color: rgba($color, .9);
+  }
+}
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+
+
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+* {
+  line-height: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  background-image: $orange-gradient;
+  position: relative;
+}
+
+main {
+  overflow: hidden;
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-image: linear-gradient(-180deg, #464646 0%, #292929 100%);
+}
+
+.disable-clicks {
+  pointer-events: none !important;
+}
+
+// Hidden youtube player
+#musicPlayer {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.overlay{
+  position: absolute;
+  background-image: linear-gradient(-180deg, #464646 0%, #292929 100%);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  @include responsive-font(4vw, 18px);
+  .logo{
+    width: 50vw;
+    align-self: center;
+    margin-bottom: 5vh;
+  }
+  p{
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 900px) {
+  .overlay {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+
+header {
+  display: flex;
+  height: 30vh;
+  padding: 4vw 4vw 0 4vw;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  > div {
+    display: flex;
+    width: calc(50% - 1vw);
+    height: 100%;
+  }
+
+  .header--left {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 20vw;
+    min-width: 200px;
+  }
+
+}
+
+/* 
+   Controll Buttons
+   ========================================================================== */
+
+.controlls {
+  display: flex;
+  width: 80%;
+
+  .controlls--button {
+    position: relative;
+    width: 30%;
+    margin-right: .5vw;
+    padding: 1vw 2vw;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    color: rgba(white, .75);
+    border-radius: .5vw;
+    background-color: #272727;
+    box-shadow: 0 .2vw 0 0 #1f2223;
+    @include responsive-font(1.2vw, 10px);
+    &:active {
+      transform: translate(0px, .2vw);
+      box-shadow: 0 0 0 0 #1f2223;
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: .7vw;
+      width: .3vw;
+      height: 60%;
+      content: '';
+      transition: all 90ms;
+      transform: translateY(-50%);
+      border-radius: 3px;
+      background-color: gray;
+    }
+
+  }
+
+  #startGame {
+    &:active:after, &.active:after {
+      @include led-glow($green)
+    }
+  }
+
+  #mute.active:after {
+    @include led-glow($red)
+  }
+
+  #about {
+    &:after {
+      @include led-glow($orange)
+    }
+
+    &:active:after {
+      @include led-glow($green)
+    }
+
+  }
+
+}
+
+/* 
+   Score Displays
+   ========================================================================== */
+
+$green-light: #60b06a;
+
+.score {
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  width: 7vw;
+  height: 100%;
+  margin-right: 1vw;
+  text-align: center;
+
+  &--box {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    border-radius: $border-radius;
+    background-color: $display-color-light;
+    flex-grow: 1;
+    justify-content: center;
+    @include inset();
+
+    &:first-child {
+      margin-bottom: 1vw;
+    }
+
+    .title {
+      @include responsive-font(1vw, 10px);
+      color: $gray-light;
+    }
+
+    .value {
+      @include responsive-font(2.5vw, 14px);
+      color: $gray;
+    }
+
+    #current {
+      color: $green-light;
+    }
+
+  }
+}
+
+/* 
+   Track Info & Equalizer
+   ========================================================================== */
+
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#track-title {
+  overflow: hidden;
+  min-height: calc(1em + 1vw);
+  margin-top: .5vw;
+  padding: .5vw;
+  padding-left: 1vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $turquose;
+  border-radius: $border-radius;
+  background-color: $display-color-dark;
+  @include inset();
+  @include responsive-font(1.2vw, 10px);
+}
+
+.equalizer {
+  position: relative;
+  height: 10px;
+  padding: 1vw;
+  border-radius: $border-radius;
+  background-color: $display-color-dark;
+  flex-grow: 1;
+  @include inset();
+
+  &--inner {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .bar {
+    min-height: 10px;
+    max-height: 80%;
+    margin-right: 1%;
+    border-radius: 3px;
+    background-color: $turquose;
+    box-shadow: 0 0 10px 0 rgba($turquose, .6);
+    flex-grow: 1;
+  }
+
+  &.animate .bar {
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 5px, black 5px, black 7px);
+  }
+
+}
+
+// Animate Bars
+
+$multiplier: 100 / $eq-bars;
+@for $i from 0 through $eq-bars {
+    .animate .bar:nth-child(#{$i}) {
+        animation: grow#{$i} #{random(700) + 1500}ms alternate infinite;
+    }
+    @keyframes grow#{$i} {
+        @for $j from 0 through 10 {
+            #{$j * 10}% {
+                height: #{random(110)}px;
+            }
+        }
+    }
+}
+
+
+
+/* ==========================================================================
+   PADS
+   ========================================================================== */
+
+/* 
+   Pads Grid
+   ========================================================================== */
+
+#options {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  height: 70vh;
+  padding: $gutter;
+  flex-wrap: wrap;
+
+  .option {
+    display: flex;
+    flex-direction: column;
+    margin: 1vw;
+    flex-basis: calc(50% - 2vw);
+    justify-content: center;
+  }
+
+}
+
+/* 
+   Pads Style
+   ========================================================================== */
+
+.pad {
+  position: relative;
+  cursor: pointer;
+  transition: all 100ms;
+  border: $pad-boarder;
+  border-radius: 1.5vw;
+  background: $pad-background-color;
+  background-image: $pad-gradient;
+
+  &--number {
+    font-family: sans-serif;
+    @include responsive-font(1vw, 10px);
+    font-weight: bold;
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    color: $gray-dark;
+  }
+
+  &--value {
+    @include responsive-font(1.6vw, 18px);
+    line-height: 1;
+    position: absolute;
+    bottom: 1.5vw;
+    left: 1.5vw;
+    text-transform: capitalize;
+    color: $semi-white;
+  }
+
+  &.selected {
+    transition: all 50ms;
+    @include pad-glow($orange)
+  }
+
+  &.wrong {
+    @include pad-glow($red)
+  }
+
+  &.correct {
+    @include pad-glow($green)
+
+  }
+
+}
