@@ -93,6 +93,10 @@ $eq-bars: 30;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; 
+  user-select: none;    
 }
 
 body {
@@ -308,35 +312,48 @@ $green-light: #60b06a;
   flex-grow: 1;
 }
 
-#track-title {
+.track-display{
   overflow: hidden;
+  @include responsive-font(1.2vw, 10px);
   min-height: calc(1em + 1vw);
   margin-top: .5vw;
   padding: .5vw;
   padding-left: 1vw;
+  border-radius: $border-radius;
+  background-color: $display-color-dark;
+}
+
+#track-title {
   text-decoration: none;
   text-transform: uppercase;
   color: $turquose;
-  border-radius: $border-radius;
-  background-color: $display-color-dark;
-  @include inset();
-  @include responsive-font(1.2vw, 10px);
+  text-shadow: 0 0 10px rgba($turquose, 0.8);
+  &.blink{
+    animation: blinker .7s linear infinite;
+  }
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
 }
 
 .equalizer {
   position: relative;
-  height: 10px;
+  height: 100%;
   padding: 1vw;
   border-radius: $border-radius;
   background-color: $display-color-dark;
   flex-grow: 1;
+  overflow: hidden;
   @include inset();
 
   &--inner {
     display: flex;
     height: 100%;
     align-items: flex-end;
-    overflow: hidden;
+    position: absolute;
+    bottom: 1vw;
+    width: calc(100% - 2vw)
   }
 
   .bar {
@@ -360,6 +377,7 @@ $green-light: #60b06a;
 $multiplier: 100 / $eq-bars;
 @for $i from 0 through $eq-bars {
     .animate .bar:nth-child(#{$i}) {
+        animation: grow#{$i} #{random(700) + 1500}ms alternate infinite;
         animation: grow#{$i} #{random(700) + 1500}ms alternate infinite;
     }
     @keyframes grow#{$i} {
@@ -429,6 +447,7 @@ $multiplier: 100 / $eq-bars;
     bottom: 1.5vw;
     left: 1.5vw;
     text-transform: capitalize;
+    transition: all 100ms;
     color: $semi-white;
   }
 
