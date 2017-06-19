@@ -3041,6 +3041,8 @@ var musicPlayerIsReady = false
 
 var onYouTubeIframeAPIReady = function () {
   musicPlayer = new YT.Player('musicPlayer', {
+    height: '200',
+    width: '300',
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange,
