@@ -310,6 +310,7 @@ $green-light: #60b06a;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .track-display{
@@ -321,6 +322,10 @@ $green-light: #60b06a;
   padding-left: 1vw;
   border-radius: $border-radius;
   background-color: $display-color-dark;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include inset();
 }
 
 #track-title {
@@ -328,6 +333,9 @@ $green-light: #60b06a;
   text-transform: uppercase;
   color: $turquose;
   text-shadow: 0 0 10px rgba($turquose, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   &.blink{
     animation: blinker .7s linear infinite;
   }

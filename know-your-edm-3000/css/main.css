@@ -185,7 +185,8 @@ header {
 .track-info {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; }
+  flex-grow: 1;
+  min-width: 0; }
 
 .track-display {
   overflow: hidden;
@@ -195,7 +196,11 @@ header {
   padding: .5vw;
   padding-left: 1vw;
   border-radius: 0.7vw;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: inset -1px -1px 2px rgba(255, 255, 255, 0.3), inset -5px -15px 40px rgba(255, 255, 255, 0.1), inset 1px 1px 2px rgba(0, 0, 0, 0.5), inset 5px 15px 40px rgba(0, 0, 0, 0.2); }
   @media (max-width: 833.33333px) {
     .track-display {
       font-size: 10px; } }
@@ -204,7 +209,10 @@ header {
   text-decoration: none;
   text-transform: uppercase;
   color: #15706d;
-  text-shadow: 0 0 10px rgba(21, 112, 109, 0.8); }
+  text-shadow: 0 0 10px rgba(21, 112, 109, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
   #track-title.blink {
     animation: blinker .7s linear infinite; }
 
@@ -240,872 +248,872 @@ header {
     background-image: repeating-linear-gradient(0deg, transparent, transparent 5px, black 5px, black 7px); }
 
 .animate .bar:nth-child(0) {
-  animation: grow0 1996ms alternate infinite;
-  animation: grow0 2018ms alternate infinite; }
+  animation: grow0 1883ms alternate infinite;
+  animation: grow0 2179ms alternate infinite; }
 
 @keyframes grow0 {
   0% {
-    height: 18px; }
-  10% {
-    height: 96px; }
-  20% {
-    height: 90px; }
-  30% {
-    height: 58px; }
-  40% {
-    height: 23px; }
-  50% {
-    height: 28px; }
-  60% {
-    height: 43px; }
-  70% {
-    height: 27px; }
-  80% {
-    height: 77px; }
-  90% {
-    height: 71px; }
-  100% {
-    height: 29px; } }
-
-.animate .bar:nth-child(1) {
-  animation: grow1 1578ms alternate infinite;
-  animation: grow1 2157ms alternate infinite; }
-
-@keyframes grow1 {
-  0% {
-    height: 12px; }
-  10% {
-    height: 20px; }
-  20% {
-    height: 74px; }
-  30% {
-    height: 49px; }
-  40% {
-    height: 92px; }
-  50% {
-    height: 18px; }
-  60% {
-    height: 103px; }
-  70% {
-    height: 33px; }
-  80% {
-    height: 110px; }
-  90% {
-    height: 46px; }
-  100% {
-    height: 99px; } }
-
-.animate .bar:nth-child(2) {
-  animation: grow2 2179ms alternate infinite;
-  animation: grow2 1650ms alternate infinite; }
-
-@keyframes grow2 {
-  0% {
-    height: 57px; }
-  10% {
-    height: 92px; }
-  20% {
-    height: 55px; }
-  30% {
-    height: 107px; }
-  40% {
-    height: 39px; }
-  50% {
-    height: 105px; }
-  60% {
-    height: 1px; }
-  70% {
-    height: 22px; }
-  80% {
-    height: 82px; }
-  90% {
-    height: 43px; }
-  100% {
-    height: 109px; } }
-
-.animate .bar:nth-child(3) {
-  animation: grow3 2122ms alternate infinite;
-  animation: grow3 1849ms alternate infinite; }
-
-@keyframes grow3 {
-  0% {
-    height: 88px; }
-  10% {
-    height: 45px; }
-  20% {
-    height: 96px; }
-  30% {
-    height: 27px; }
-  40% {
-    height: 4px; }
-  50% {
-    height: 28px; }
-  60% {
-    height: 108px; }
-  70% {
-    height: 55px; }
-  80% {
-    height: 58px; }
-  90% {
-    height: 68px; }
-  100% {
-    height: 13px; } }
-
-.animate .bar:nth-child(4) {
-  animation: grow4 1575ms alternate infinite;
-  animation: grow4 1548ms alternate infinite; }
-
-@keyframes grow4 {
-  0% {
-    height: 46px; }
-  10% {
-    height: 51px; }
-  20% {
-    height: 11px; }
-  30% {
-    height: 33px; }
-  40% {
-    height: 79px; }
-  50% {
-    height: 27px; }
-  60% {
-    height: 62px; }
-  70% {
-    height: 74px; }
-  80% {
-    height: 58px; }
-  90% {
-    height: 15px; }
-  100% {
-    height: 107px; } }
-
-.animate .bar:nth-child(5) {
-  animation: grow5 1787ms alternate infinite;
-  animation: grow5 2077ms alternate infinite; }
-
-@keyframes grow5 {
-  0% {
-    height: 39px; }
-  10% {
-    height: 2px; }
-  20% {
-    height: 99px; }
-  30% {
-    height: 98px; }
-  40% {
-    height: 23px; }
-  50% {
-    height: 2px; }
-  60% {
-    height: 45px; }
-  70% {
-    height: 58px; }
-  80% {
-    height: 16px; }
-  90% {
-    height: 32px; }
-  100% {
-    height: 67px; } }
-
-.animate .bar:nth-child(6) {
-  animation: grow6 1853ms alternate infinite;
-  animation: grow6 1870ms alternate infinite; }
-
-@keyframes grow6 {
-  0% {
-    height: 5px; }
-  10% {
-    height: 24px; }
-  20% {
-    height: 40px; }
-  30% {
-    height: 74px; }
-  40% {
-    height: 43px; }
-  50% {
-    height: 74px; }
-  60% {
-    height: 78px; }
-  70% {
-    height: 28px; }
-  80% {
-    height: 74px; }
-  90% {
-    height: 62px; }
-  100% {
-    height: 25px; } }
-
-.animate .bar:nth-child(7) {
-  animation: grow7 2136ms alternate infinite;
-  animation: grow7 1797ms alternate infinite; }
-
-@keyframes grow7 {
-  0% {
-    height: 13px; }
-  10% {
-    height: 41px; }
-  20% {
-    height: 49px; }
-  30% {
-    height: 98px; }
-  40% {
-    height: 15px; }
-  50% {
-    height: 107px; }
-  60% {
-    height: 60px; }
-  70% {
-    height: 71px; }
-  80% {
-    height: 63px; }
-  90% {
-    height: 80px; }
-  100% {
-    height: 82px; } }
-
-.animate .bar:nth-child(8) {
-  animation: grow8 1668ms alternate infinite;
-  animation: grow8 2173ms alternate infinite; }
-
-@keyframes grow8 {
-  0% {
-    height: 91px; }
-  10% {
-    height: 105px; }
-  20% {
-    height: 56px; }
-  30% {
-    height: 53px; }
-  40% {
-    height: 14px; }
-  50% {
-    height: 19px; }
-  60% {
-    height: 27px; }
-  70% {
-    height: 71px; }
-  80% {
-    height: 84px; }
-  90% {
-    height: 12px; }
-  100% {
-    height: 95px; } }
-
-.animate .bar:nth-child(9) {
-  animation: grow9 1710ms alternate infinite;
-  animation: grow9 1615ms alternate infinite; }
-
-@keyframes grow9 {
-  0% {
-    height: 35px; }
-  10% {
-    height: 78px; }
-  20% {
-    height: 66px; }
-  30% {
-    height: 22px; }
-  40% {
-    height: 86px; }
-  50% {
-    height: 78px; }
-  60% {
-    height: 36px; }
-  70% {
-    height: 56px; }
-  80% {
-    height: 87px; }
-  90% {
-    height: 19px; }
-  100% {
-    height: 82px; } }
-
-.animate .bar:nth-child(10) {
-  animation: grow10 1683ms alternate infinite;
-  animation: grow10 1788ms alternate infinite; }
-
-@keyframes grow10 {
-  0% {
-    height: 24px; }
-  10% {
-    height: 55px; }
-  20% {
-    height: 23px; }
-  30% {
-    height: 54px; }
-  40% {
-    height: 86px; }
-  50% {
-    height: 43px; }
-  60% {
-    height: 81px; }
-  70% {
-    height: 9px; }
-  80% {
-    height: 69px; }
-  90% {
-    height: 15px; }
-  100% {
-    height: 40px; } }
-
-.animate .bar:nth-child(11) {
-  animation: grow11 1704ms alternate infinite;
-  animation: grow11 1799ms alternate infinite; }
-
-@keyframes grow11 {
-  0% {
-    height: 38px; }
-  10% {
-    height: 78px; }
-  20% {
-    height: 18px; }
-  30% {
-    height: 88px; }
-  40% {
-    height: 103px; }
-  50% {
-    height: 60px; }
-  60% {
-    height: 108px; }
-  70% {
-    height: 83px; }
-  80% {
-    height: 58px; }
-  90% {
-    height: 25px; }
-  100% {
-    height: 58px; } }
-
-.animate .bar:nth-child(12) {
-  animation: grow12 2109ms alternate infinite;
-  animation: grow12 1954ms alternate infinite; }
-
-@keyframes grow12 {
-  0% {
-    height: 102px; }
-  10% {
-    height: 52px; }
-  20% {
-    height: 5px; }
-  30% {
-    height: 43px; }
-  40% {
-    height: 92px; }
-  50% {
-    height: 99px; }
-  60% {
-    height: 23px; }
-  70% {
-    height: 7px; }
-  80% {
-    height: 88px; }
-  90% {
-    height: 66px; }
-  100% {
-    height: 56px; } }
-
-.animate .bar:nth-child(13) {
-  animation: grow13 2059ms alternate infinite;
-  animation: grow13 1670ms alternate infinite; }
-
-@keyframes grow13 {
-  0% {
-    height: 81px; }
-  10% {
-    height: 38px; }
-  20% {
-    height: 13px; }
-  30% {
-    height: 100px; }
-  40% {
     height: 93px; }
-  50% {
-    height: 87px; }
-  60% {
-    height: 40px; }
-  70% {
-    height: 47px; }
-  80% {
-    height: 31px; }
-  90% {
-    height: 66px; }
-  100% {
-    height: 18px; } }
-
-.animate .bar:nth-child(14) {
-  animation: grow14 1592ms alternate infinite;
-  animation: grow14 2119ms alternate infinite; }
-
-@keyframes grow14 {
-  0% {
-    height: 55px; }
   10% {
-    height: 27px; }
-  20% {
     height: 26px; }
-  30% {
-    height: 53px; }
-  40% {
-    height: 11px; }
-  50% {
-    height: 71px; }
-  60% {
-    height: 68px; }
-  70% {
-    height: 4px; }
-  80% {
-    height: 18px; }
-  90% {
-    height: 97px; }
-  100% {
-    height: 87px; } }
-
-.animate .bar:nth-child(15) {
-  animation: grow15 1942ms alternate infinite;
-  animation: grow15 2060ms alternate infinite; }
-
-@keyframes grow15 {
-  0% {
-    height: 86px; }
-  10% {
-    height: 18px; }
   20% {
-    height: 48px; }
+    height: 94px; }
   30% {
-    height: 34px; }
-  40% {
-    height: 17px; }
-  50% {
     height: 101px; }
-  60% {
-    height: 11px; }
-  70% {
-    height: 105px; }
-  80% {
-    height: 103px; }
-  90% {
-    height: 109px; }
-  100% {
-    height: 109px; } }
-
-.animate .bar:nth-child(16) {
-  animation: grow16 2001ms alternate infinite;
-  animation: grow16 1686ms alternate infinite; }
-
-@keyframes grow16 {
-  0% {
-    height: 42px; }
-  10% {
-    height: 3px; }
-  20% {
-    height: 102px; }
-  30% {
-    height: 31px; }
   40% {
-    height: 34px; }
+    height: 71px; }
   50% {
-    height: 89px; }
-  60% {
-    height: 11px; }
-  70% {
-    height: 17px; }
-  80% {
-    height: 81px; }
-  90% {
-    height: 79px; }
-  100% {
-    height: 68px; } }
-
-.animate .bar:nth-child(17) {
-  animation: grow17 1717ms alternate infinite;
-  animation: grow17 1603ms alternate infinite; }
-
-@keyframes grow17 {
-  0% {
     height: 10px; }
-  10% {
-    height: 3px; }
-  20% {
-    height: 48px; }
-  30% {
+  60% {
+    height: 11px; }
+  70% {
+    height: 14px; }
+  80% {
     height: 56px; }
-  40% {
-    height: 102px; }
-  50% {
-    height: 98px; }
-  60% {
-    height: 99px; }
-  70% {
-    height: 45px; }
-  80% {
-    height: 87px; }
   90% {
-    height: 59px; }
-  100% {
-    height: 35px; } }
-
-.animate .bar:nth-child(18) {
-  animation: grow18 1761ms alternate infinite;
-  animation: grow18 2084ms alternate infinite; }
-
-@keyframes grow18 {
-  0% {
-    height: 108px; }
-  10% {
-    height: 46px; }
-  20% {
-    height: 57px; }
-  30% {
-    height: 24px; }
-  40% {
-    height: 81px; }
-  50% {
-    height: 27px; }
-  60% {
-    height: 3px; }
-  70% {
-    height: 67px; }
-  80% {
-    height: 103px; }
-  90% {
-    height: 3px; }
+    height: 56px; }
   100% {
     height: 77px; } }
 
-.animate .bar:nth-child(19) {
-  animation: grow19 2141ms alternate infinite;
-  animation: grow19 2071ms alternate infinite; }
+.animate .bar:nth-child(1) {
+  animation: grow1 1923ms alternate infinite;
+  animation: grow1 2001ms alternate infinite; }
 
-@keyframes grow19 {
+@keyframes grow1 {
   0% {
-    height: 41px; }
+    height: 109px; }
   10% {
-    height: 107px; }
-  20% {
-    height: 19px; }
-  30% {
-    height: 3px; }
-  40% {
-    height: 4px; }
-  50% {
-    height: 29px; }
-  60% {
-    height: 6px; }
-  70% {
-    height: 86px; }
-  80% {
-    height: 46px; }
-  90% {
-    height: 43px; }
-  100% {
-    height: 63px; } }
-
-.animate .bar:nth-child(20) {
-  animation: grow20 1800ms alternate infinite;
-  animation: grow20 1758ms alternate infinite; }
-
-@keyframes grow20 {
-  0% {
     height: 72px; }
-  10% {
-    height: 8px; }
   20% {
-    height: 77px; }
+    height: 94px; }
   30% {
-    height: 72px; }
-  40% {
-    height: 55px; }
-  50% {
-    height: 63px; }
-  60% {
-    height: 81px; }
-  70% {
     height: 103px; }
-  80% {
-    height: 74px; }
-  90% {
-    height: 97px; }
-  100% {
-    height: 17px; } }
-
-.animate .bar:nth-child(21) {
-  animation: grow21 2123ms alternate infinite;
-  animation: grow21 1780ms alternate infinite; }
-
-@keyframes grow21 {
-  0% {
-    height: 5px; }
-  10% {
-    height: 37px; }
-  20% {
-    height: 88px; }
-  30% {
-    height: 58px; }
   40% {
-    height: 61px; }
+    height: 35px; }
   50% {
-    height: 88px; }
+    height: 5px; }
   60% {
-    height: 26px; }
+    height: 105px; }
   70% {
     height: 55px; }
   80% {
-    height: 7px; }
-  90% {
-    height: 65px; }
-  100% {
-    height: 59px; } }
-
-.animate .bar:nth-child(22) {
-  animation: grow22 1985ms alternate infinite;
-  animation: grow22 1785ms alternate infinite; }
-
-@keyframes grow22 {
-  0% {
-    height: 74px; }
-  10% {
-    height: 96px; }
-  20% {
-    height: 58px; }
-  30% {
-    height: 37px; }
-  40% {
-    height: 42px; }
-  50% {
-    height: 62px; }
-  60% {
-    height: 91px; }
-  70% {
-    height: 64px; }
-  80% {
-    height: 14px; }
-  90% {
-    height: 84px; }
-  100% {
-    height: 26px; } }
-
-.animate .bar:nth-child(23) {
-  animation: grow23 1821ms alternate infinite;
-  animation: grow23 1583ms alternate infinite; }
-
-@keyframes grow23 {
-  0% {
-    height: 27px; }
-  10% {
-    height: 5px; }
-  20% {
-    height: 7px; }
-  30% {
-    height: 105px; }
-  40% {
-    height: 6px; }
-  50% {
-    height: 3px; }
-  60% {
-    height: 19px; }
-  70% {
-    height: 19px; }
-  80% {
-    height: 67px; }
-  90% {
-    height: 45px; }
-  100% {
-    height: 98px; } }
-
-.animate .bar:nth-child(24) {
-  animation: grow24 1515ms alternate infinite;
-  animation: grow24 1527ms alternate infinite; }
-
-@keyframes grow24 {
-  0% {
-    height: 33px; }
-  10% {
     height: 47px; }
-  20% {
-    height: 56px; }
-  30% {
-    height: 25px; }
-  40% {
-    height: 40px; }
-  50% {
-    height: 31px; }
-  60% {
-    height: 82px; }
-  70% {
-    height: 45px; }
-  80% {
-    height: 65px; }
   90% {
-    height: 78px; }
+    height: 32px; }
   100% {
-    height: 31px; } }
+    height: 28px; } }
 
-.animate .bar:nth-child(25) {
-  animation: grow25 1520ms alternate infinite;
-  animation: grow25 1549ms alternate infinite; }
+.animate .bar:nth-child(2) {
+  animation: grow2 1825ms alternate infinite;
+  animation: grow2 1833ms alternate infinite; }
 
-@keyframes grow25 {
+@keyframes grow2 {
   0% {
-    height: 14px; }
-  10% {
-    height: 36px; }
-  20% {
-    height: 6px; }
-  30% {
-    height: 28px; }
-  40% {
-    height: 91px; }
-  50% {
-    height: 52px; }
-  60% {
-    height: 11px; }
-  70% {
-    height: 89px; }
-  80% {
-    height: 73px; }
-  90% {
-    height: 34px; }
-  100% {
-    height: 58px; } }
-
-.animate .bar:nth-child(26) {
-  animation: grow26 1773ms alternate infinite;
-  animation: grow26 1685ms alternate infinite; }
-
-@keyframes grow26 {
-  0% {
-    height: 92px; }
-  10% {
-    height: 34px; }
-  20% {
-    height: 48px; }
-  30% {
-    height: 53px; }
-  40% {
-    height: 2px; }
-  50% {
-    height: 3px; }
-  60% {
-    height: 89px; }
-  70% {
-    height: 28px; }
-  80% {
-    height: 87px; }
-  90% {
-    height: 109px; }
-  100% {
-    height: 36px; } }
-
-.animate .bar:nth-child(27) {
-  animation: grow27 1600ms alternate infinite;
-  animation: grow27 1756ms alternate infinite; }
-
-@keyframes grow27 {
-  0% {
-    height: 78px; }
-  10% {
-    height: 41px; }
-  20% {
-    height: 75px; }
-  30% {
-    height: 3px; }
-  40% {
-    height: 9px; }
-  50% {
-    height: 62px; }
-  60% {
-    height: 93px; }
-  70% {
-    height: 82px; }
-  80% {
-    height: 98px; }
-  90% {
-    height: 98px; }
-  100% {
-    height: 6px; } }
-
-.animate .bar:nth-child(28) {
-  animation: grow28 1646ms alternate infinite;
-  animation: grow28 1593ms alternate infinite; }
-
-@keyframes grow28 {
-  0% {
-    height: 100px; }
-  10% {
-    height: 73px; }
-  20% {
-    height: 81px; }
-  30% {
-    height: 92px; }
-  40% {
-    height: 82px; }
-  50% {
-    height: 51px; }
-  60% {
-    height: 106px; }
-  70% {
-    height: 108px; }
-  80% {
-    height: 97px; }
-  90% {
-    height: 45px; }
-  100% {
-    height: 53px; } }
-
-.animate .bar:nth-child(29) {
-  animation: grow29 2028ms alternate infinite;
-  animation: grow29 1594ms alternate infinite; }
-
-@keyframes grow29 {
-  0% {
-    height: 109px; }
-  10% {
-    height: 89px; }
-  20% {
-    height: 33px; }
-  30% {
-    height: 106px; }
-  40% {
-    height: 3px; }
-  50% {
-    height: 6px; }
-  60% {
     height: 7px; }
-  70% {
-    height: 97px; }
-  80% {
-    height: 26px; }
-  90% {
-    height: 34px; }
-  100% {
-    height: 26px; } }
-
-.animate .bar:nth-child(30) {
-  animation: grow30 1541ms alternate infinite;
-  animation: grow30 1533ms alternate infinite; }
-
-@keyframes grow30 {
-  0% {
-    height: 89px; }
   10% {
-    height: 68px; }
+    height: 75px; }
   20% {
-    height: 14px; }
+    height: 61px; }
   30% {
-    height: 99px; }
+    height: 44px; }
   40% {
-    height: 68px; }
+    height: 31px; }
+  50% {
+    height: 97px; }
+  60% {
+    height: 75px; }
+  70% {
+    height: 27px; }
+  80% {
+    height: 99px; }
+  90% {
+    height: 48px; }
+  100% {
+    height: 67px; } }
+
+.animate .bar:nth-child(3) {
+  animation: grow3 1724ms alternate infinite;
+  animation: grow3 1798ms alternate infinite; }
+
+@keyframes grow3 {
+  0% {
+    height: 110px; }
+  10% {
+    height: 83px; }
+  20% {
+    height: 106px; }
+  30% {
+    height: 50px; }
+  40% {
+    height: 96px; }
+  50% {
+    height: 35px; }
+  60% {
+    height: 36px; }
+  70% {
+    height: 13px; }
+  80% {
+    height: 34px; }
+  90% {
+    height: 30px; }
+  100% {
+    height: 75px; } }
+
+.animate .bar:nth-child(4) {
+  animation: grow4 1656ms alternate infinite;
+  animation: grow4 1720ms alternate infinite; }
+
+@keyframes grow4 {
+  0% {
+    height: 110px; }
+  10% {
+    height: 43px; }
+  20% {
+    height: 32px; }
+  30% {
+    height: 10px; }
+  40% {
+    height: 46px; }
   50% {
     height: 50px; }
   60% {
-    height: 36px; }
+    height: 97px; }
   70% {
-    height: 108px; }
+    height: 11px; }
   80% {
-    height: 7px; }
+    height: 40px; }
   90% {
-    height: 105px; }
+    height: 73px; }
   100% {
-    height: 24px; } }
+    height: 33px; } }
+
+.animate .bar:nth-child(5) {
+  animation: grow5 1695ms alternate infinite;
+  animation: grow5 1595ms alternate infinite; }
+
+@keyframes grow5 {
+  0% {
+    height: 43px; }
+  10% {
+    height: 95px; }
+  20% {
+    height: 86px; }
+  30% {
+    height: 88px; }
+  40% {
+    height: 96px; }
+  50% {
+    height: 34px; }
+  60% {
+    height: 50px; }
+  70% {
+    height: 81px; }
+  80% {
+    height: 107px; }
+  90% {
+    height: 14px; }
+  100% {
+    height: 57px; } }
+
+.animate .bar:nth-child(6) {
+  animation: grow6 1801ms alternate infinite;
+  animation: grow6 2188ms alternate infinite; }
+
+@keyframes grow6 {
+  0% {
+    height: 40px; }
+  10% {
+    height: 10px; }
+  20% {
+    height: 10px; }
+  30% {
+    height: 46px; }
+  40% {
+    height: 100px; }
+  50% {
+    height: 20px; }
+  60% {
+    height: 66px; }
+  70% {
+    height: 54px; }
+  80% {
+    height: 107px; }
+  90% {
+    height: 15px; }
+  100% {
+    height: 71px; } }
+
+.animate .bar:nth-child(7) {
+  animation: grow7 1758ms alternate infinite;
+  animation: grow7 2183ms alternate infinite; }
+
+@keyframes grow7 {
+  0% {
+    height: 11px; }
+  10% {
+    height: 4px; }
+  20% {
+    height: 40px; }
+  30% {
+    height: 83px; }
+  40% {
+    height: 19px; }
+  50% {
+    height: 64px; }
+  60% {
+    height: 5px; }
+  70% {
+    height: 56px; }
+  80% {
+    height: 79px; }
+  90% {
+    height: 47px; }
+  100% {
+    height: 72px; } }
+
+.animate .bar:nth-child(8) {
+  animation: grow8 2037ms alternate infinite;
+  animation: grow8 1528ms alternate infinite; }
+
+@keyframes grow8 {
+  0% {
+    height: 63px; }
+  10% {
+    height: 12px; }
+  20% {
+    height: 57px; }
+  30% {
+    height: 57px; }
+  40% {
+    height: 13px; }
+  50% {
+    height: 95px; }
+  60% {
+    height: 28px; }
+  70% {
+    height: 18px; }
+  80% {
+    height: 8px; }
+  90% {
+    height: 101px; }
+  100% {
+    height: 26px; } }
+
+.animate .bar:nth-child(9) {
+  animation: grow9 1708ms alternate infinite;
+  animation: grow9 2144ms alternate infinite; }
+
+@keyframes grow9 {
+  0% {
+    height: 89px; }
+  10% {
+    height: 16px; }
+  20% {
+    height: 13px; }
+  30% {
+    height: 32px; }
+  40% {
+    height: 5px; }
+  50% {
+    height: 28px; }
+  60% {
+    height: 92px; }
+  70% {
+    height: 29px; }
+  80% {
+    height: 58px; }
+  90% {
+    height: 49px; }
+  100% {
+    height: 9px; } }
+
+.animate .bar:nth-child(10) {
+  animation: grow10 1830ms alternate infinite;
+  animation: grow10 2055ms alternate infinite; }
+
+@keyframes grow10 {
+  0% {
+    height: 32px; }
+  10% {
+    height: 77px; }
+  20% {
+    height: 87px; }
+  30% {
+    height: 104px; }
+  40% {
+    height: 59px; }
+  50% {
+    height: 22px; }
+  60% {
+    height: 79px; }
+  70% {
+    height: 1px; }
+  80% {
+    height: 42px; }
+  90% {
+    height: 49px; }
+  100% {
+    height: 80px; } }
+
+.animate .bar:nth-child(11) {
+  animation: grow11 1916ms alternate infinite;
+  animation: grow11 1673ms alternate infinite; }
+
+@keyframes grow11 {
+  0% {
+    height: 32px; }
+  10% {
+    height: 30px; }
+  20% {
+    height: 23px; }
+  30% {
+    height: 68px; }
+  40% {
+    height: 75px; }
+  50% {
+    height: 64px; }
+  60% {
+    height: 43px; }
+  70% {
+    height: 58px; }
+  80% {
+    height: 12px; }
+  90% {
+    height: 8px; }
+  100% {
+    height: 51px; } }
+
+.animate .bar:nth-child(12) {
+  animation: grow12 2154ms alternate infinite;
+  animation: grow12 1808ms alternate infinite; }
+
+@keyframes grow12 {
+  0% {
+    height: 80px; }
+  10% {
+    height: 37px; }
+  20% {
+    height: 88px; }
+  30% {
+    height: 47px; }
+  40% {
+    height: 38px; }
+  50% {
+    height: 69px; }
+  60% {
+    height: 96px; }
+  70% {
+    height: 75px; }
+  80% {
+    height: 55px; }
+  90% {
+    height: 23px; }
+  100% {
+    height: 86px; } }
+
+.animate .bar:nth-child(13) {
+  animation: grow13 1901ms alternate infinite;
+  animation: grow13 2194ms alternate infinite; }
+
+@keyframes grow13 {
+  0% {
+    height: 100px; }
+  10% {
+    height: 87px; }
+  20% {
+    height: 23px; }
+  30% {
+    height: 107px; }
+  40% {
+    height: 40px; }
+  50% {
+    height: 27px; }
+  60% {
+    height: 25px; }
+  70% {
+    height: 39px; }
+  80% {
+    height: 50px; }
+  90% {
+    height: 54px; }
+  100% {
+    height: 27px; } }
+
+.animate .bar:nth-child(14) {
+  animation: grow14 1644ms alternate infinite;
+  animation: grow14 2179ms alternate infinite; }
+
+@keyframes grow14 {
+  0% {
+    height: 10px; }
+  10% {
+    height: 41px; }
+  20% {
+    height: 1px; }
+  30% {
+    height: 34px; }
+  40% {
+    height: 52px; }
+  50% {
+    height: 17px; }
+  60% {
+    height: 48px; }
+  70% {
+    height: 16px; }
+  80% {
+    height: 37px; }
+  90% {
+    height: 15px; }
+  100% {
+    height: 85px; } }
+
+.animate .bar:nth-child(15) {
+  animation: grow15 1740ms alternate infinite;
+  animation: grow15 1549ms alternate infinite; }
+
+@keyframes grow15 {
+  0% {
+    height: 51px; }
+  10% {
+    height: 54px; }
+  20% {
+    height: 45px; }
+  30% {
+    height: 56px; }
+  40% {
+    height: 35px; }
+  50% {
+    height: 73px; }
+  60% {
+    height: 46px; }
+  70% {
+    height: 96px; }
+  80% {
+    height: 15px; }
+  90% {
+    height: 99px; }
+  100% {
+    height: 67px; } }
+
+.animate .bar:nth-child(16) {
+  animation: grow16 1628ms alternate infinite;
+  animation: grow16 1671ms alternate infinite; }
+
+@keyframes grow16 {
+  0% {
+    height: 105px; }
+  10% {
+    height: 24px; }
+  20% {
+    height: 74px; }
+  30% {
+    height: 60px; }
+  40% {
+    height: 13px; }
+  50% {
+    height: 89px; }
+  60% {
+    height: 79px; }
+  70% {
+    height: 92px; }
+  80% {
+    height: 106px; }
+  90% {
+    height: 31px; }
+  100% {
+    height: 90px; } }
+
+.animate .bar:nth-child(17) {
+  animation: grow17 2141ms alternate infinite;
+  animation: grow17 1943ms alternate infinite; }
+
+@keyframes grow17 {
+  0% {
+    height: 104px; }
+  10% {
+    height: 50px; }
+  20% {
+    height: 63px; }
+  30% {
+    height: 86px; }
+  40% {
+    height: 1px; }
+  50% {
+    height: 106px; }
+  60% {
+    height: 82px; }
+  70% {
+    height: 91px; }
+  80% {
+    height: 72px; }
+  90% {
+    height: 76px; }
+  100% {
+    height: 63px; } }
+
+.animate .bar:nth-child(18) {
+  animation: grow18 1924ms alternate infinite;
+  animation: grow18 2016ms alternate infinite; }
+
+@keyframes grow18 {
+  0% {
+    height: 54px; }
+  10% {
+    height: 78px; }
+  20% {
+    height: 49px; }
+  30% {
+    height: 56px; }
+  40% {
+    height: 8px; }
+  50% {
+    height: 18px; }
+  60% {
+    height: 109px; }
+  70% {
+    height: 82px; }
+  80% {
+    height: 64px; }
+  90% {
+    height: 83px; }
+  100% {
+    height: 4px; } }
+
+.animate .bar:nth-child(19) {
+  animation: grow19 1726ms alternate infinite;
+  animation: grow19 1508ms alternate infinite; }
+
+@keyframes grow19 {
+  0% {
+    height: 79px; }
+  10% {
+    height: 106px; }
+  20% {
+    height: 19px; }
+  30% {
+    height: 23px; }
+  40% {
+    height: 22px; }
+  50% {
+    height: 44px; }
+  60% {
+    height: 104px; }
+  70% {
+    height: 75px; }
+  80% {
+    height: 8px; }
+  90% {
+    height: 68px; }
+  100% {
+    height: 2px; } }
+
+.animate .bar:nth-child(20) {
+  animation: grow20 1688ms alternate infinite;
+  animation: grow20 1648ms alternate infinite; }
+
+@keyframes grow20 {
+  0% {
+    height: 92px; }
+  10% {
+    height: 32px; }
+  20% {
+    height: 77px; }
+  30% {
+    height: 42px; }
+  40% {
+    height: 22px; }
+  50% {
+    height: 92px; }
+  60% {
+    height: 1px; }
+  70% {
+    height: 103px; }
+  80% {
+    height: 108px; }
+  90% {
+    height: 108px; }
+  100% {
+    height: 78px; } }
+
+.animate .bar:nth-child(21) {
+  animation: grow21 1735ms alternate infinite;
+  animation: grow21 1545ms alternate infinite; }
+
+@keyframes grow21 {
+  0% {
+    height: 99px; }
+  10% {
+    height: 51px; }
+  20% {
+    height: 30px; }
+  30% {
+    height: 98px; }
+  40% {
+    height: 70px; }
+  50% {
+    height: 60px; }
+  60% {
+    height: 50px; }
+  70% {
+    height: 14px; }
+  80% {
+    height: 72px; }
+  90% {
+    height: 31px; }
+  100% {
+    height: 99px; } }
+
+.animate .bar:nth-child(22) {
+  animation: grow22 2024ms alternate infinite;
+  animation: grow22 1547ms alternate infinite; }
+
+@keyframes grow22 {
+  0% {
+    height: 22px; }
+  10% {
+    height: 101px; }
+  20% {
+    height: 44px; }
+  30% {
+    height: 104px; }
+  40% {
+    height: 37px; }
+  50% {
+    height: 64px; }
+  60% {
+    height: 85px; }
+  70% {
+    height: 65px; }
+  80% {
+    height: 9px; }
+  90% {
+    height: 78px; }
+  100% {
+    height: 47px; } }
+
+.animate .bar:nth-child(23) {
+  animation: grow23 1868ms alternate infinite;
+  animation: grow23 2077ms alternate infinite; }
+
+@keyframes grow23 {
+  0% {
+    height: 4px; }
+  10% {
+    height: 44px; }
+  20% {
+    height: 70px; }
+  30% {
+    height: 14px; }
+  40% {
+    height: 96px; }
+  50% {
+    height: 88px; }
+  60% {
+    height: 105px; }
+  70% {
+    height: 59px; }
+  80% {
+    height: 5px; }
+  90% {
+    height: 14px; }
+  100% {
+    height: 54px; } }
+
+.animate .bar:nth-child(24) {
+  animation: grow24 1934ms alternate infinite;
+  animation: grow24 1687ms alternate infinite; }
+
+@keyframes grow24 {
+  0% {
+    height: 15px; }
+  10% {
+    height: 13px; }
+  20% {
+    height: 7px; }
+  30% {
+    height: 51px; }
+  40% {
+    height: 22px; }
+  50% {
+    height: 77px; }
+  60% {
+    height: 44px; }
+  70% {
+    height: 90px; }
+  80% {
+    height: 60px; }
+  90% {
+    height: 53px; }
+  100% {
+    height: 75px; } }
+
+.animate .bar:nth-child(25) {
+  animation: grow25 1534ms alternate infinite;
+  animation: grow25 2066ms alternate infinite; }
+
+@keyframes grow25 {
+  0% {
+    height: 15px; }
+  10% {
+    height: 92px; }
+  20% {
+    height: 9px; }
+  30% {
+    height: 21px; }
+  40% {
+    height: 54px; }
+  50% {
+    height: 52px; }
+  60% {
+    height: 23px; }
+  70% {
+    height: 25px; }
+  80% {
+    height: 32px; }
+  90% {
+    height: 81px; }
+  100% {
+    height: 26px; } }
+
+.animate .bar:nth-child(26) {
+  animation: grow26 1975ms alternate infinite;
+  animation: grow26 1728ms alternate infinite; }
+
+@keyframes grow26 {
+  0% {
+    height: 32px; }
+  10% {
+    height: 47px; }
+  20% {
+    height: 96px; }
+  30% {
+    height: 75px; }
+  40% {
+    height: 110px; }
+  50% {
+    height: 69px; }
+  60% {
+    height: 86px; }
+  70% {
+    height: 93px; }
+  80% {
+    height: 9px; }
+  90% {
+    height: 49px; }
+  100% {
+    height: 41px; } }
+
+.animate .bar:nth-child(27) {
+  animation: grow27 1806ms alternate infinite;
+  animation: grow27 1641ms alternate infinite; }
+
+@keyframes grow27 {
+  0% {
+    height: 103px; }
+  10% {
+    height: 97px; }
+  20% {
+    height: 42px; }
+  30% {
+    height: 108px; }
+  40% {
+    height: 72px; }
+  50% {
+    height: 37px; }
+  60% {
+    height: 75px; }
+  70% {
+    height: 28px; }
+  80% {
+    height: 57px; }
+  90% {
+    height: 81px; }
+  100% {
+    height: 76px; } }
+
+.animate .bar:nth-child(28) {
+  animation: grow28 2182ms alternate infinite;
+  animation: grow28 2074ms alternate infinite; }
+
+@keyframes grow28 {
+  0% {
+    height: 67px; }
+  10% {
+    height: 26px; }
+  20% {
+    height: 74px; }
+  30% {
+    height: 26px; }
+  40% {
+    height: 52px; }
+  50% {
+    height: 42px; }
+  60% {
+    height: 62px; }
+  70% {
+    height: 57px; }
+  80% {
+    height: 63px; }
+  90% {
+    height: 101px; }
+  100% {
+    height: 83px; } }
+
+.animate .bar:nth-child(29) {
+  animation: grow29 2007ms alternate infinite;
+  animation: grow29 2178ms alternate infinite; }
+
+@keyframes grow29 {
+  0% {
+    height: 38px; }
+  10% {
+    height: 110px; }
+  20% {
+    height: 58px; }
+  30% {
+    height: 71px; }
+  40% {
+    height: 6px; }
+  50% {
+    height: 98px; }
+  60% {
+    height: 68px; }
+  70% {
+    height: 95px; }
+  80% {
+    height: 73px; }
+  90% {
+    height: 44px; }
+  100% {
+    height: 76px; } }
+
+.animate .bar:nth-child(30) {
+  animation: grow30 2044ms alternate infinite;
+  animation: grow30 2125ms alternate infinite; }
+
+@keyframes grow30 {
+  0% {
+    height: 98px; }
+  10% {
+    height: 97px; }
+  20% {
+    height: 81px; }
+  30% {
+    height: 20px; }
+  40% {
+    height: 27px; }
+  50% {
+    height: 83px; }
+  60% {
+    height: 110px; }
+  70% {
+    height: 42px; }
+  80% {
+    height: 53px; }
+  90% {
+    height: 107px; }
+  100% {
+    height: 6px; } }
 
 /* ==========================================================================
    PADS
