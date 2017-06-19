@@ -131,7 +131,7 @@ main {
   border: 0;
 }
 
-.overlay{
+.small-screen-overlay{
   position: absolute;
   background-image: linear-gradient(-180deg, #464646 0%, #292929 100%);
   width: 100vw;
@@ -155,7 +155,7 @@ main {
 }
 
 @media (min-width: 900px) {
-  .overlay {
+  .small-screen-overlay {
     display: none;
   }
 }

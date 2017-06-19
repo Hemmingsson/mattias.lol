@@ -3076,18 +3076,26 @@ var onPlayerStateChange = function (e) {
     // video cued
   }
 
-  if (e.data == 3) {
-    isLoading(true)
-  } else {
-    isLoading(false)
-  }
+  playerIsLoading(e)
+  playerIsPlaying(e)
 
-  // If video is playing
+
+}
+
+var playerIsPlaying = function (e) {
   if (e.data == 1) {
     disablePads(false)
     elmEqualizer.classList.add('animate')
   } else {
     elmEqualizer.classList.remove('animate')
+  }
+}
+
+var playerIsLoading = function (e) {
+  if (e.data == 3) {
+    isLoading(true)
+  } else {
+    isLoading(false)
   }
 }
 
@@ -3117,7 +3125,7 @@ var startNewGameRound = function () {
   // Create data for a new round
   drawNewRound().then(function (roundData) {
     // Load video
-    musicPlayer.loadVideoById(roundData.correctTrack.ytId, 40)
+    musicPlayer.loadVideoById(roundData.correctTrack.ytId, 40, "small")
     // Make roundData avalible out of scope
     currentRoundData = roundData
     // Render roundData in DOM
@@ -3327,14 +3335,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var musicPlayerReady = setInterval(function () {
     if (musicPlayer !== undefined && musicPlayerIsReady) {
-      clearTimeout(failTimer)
+      
       elmStart.classList.add('active')
       // Make main clickable
       document.getElementsByTagName('main')[0].classList.remove('disable-clicks')
+      // Show instructions
       updateDisplayText('CLICK START TO BEGINN...')
+      // Unmute youtube player
+      if(musicPlayer.isMuted()){musicPlayer.unMute()}
+      // Remove blinking
       elmTrackInfo.classList.remove('blink')
+      // Reset DOM
       resetDOM()
+      // Clear intervall & fail checker
       clearInterval(musicPlayerReady)
+      clearTimeout(failTimer)
     }
   }, 10)
 }, false)
