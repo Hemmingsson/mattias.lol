@@ -45,7 +45,10 @@ h1 {
     animation: 4s linear 0s ticker infinite;
     white-space: nowrap;
     letter-spacing: .02em;
+    text-shadow: 0.15em 0 rgba(255, 0, 0, 0.5), -0.15em 0 rgba(0, 128, 0, 0.5);
+    color: rgba(0, 0, 255, 0.5);
 }
+
 
 
 .contact {
@@ -61,12 +64,21 @@ h1 {
     color: red;
 }
 
+#mute:hover{
+  color: rgba(0, 0, 255, 0.5);
+}
+
 a {
     margin: 0 .15em;
 
     text-decoration: none;
 
     color: blue;
+}
+
+a:hover{
+    text-shadow: 0.15em 0 rgba(255, 0, 0, 0.5), -0.15em 0 rgba(0, 128, 0, 0.5);
+    color: rgba(0, 0, 255, 0.51);
 }
 
 a:visited {
