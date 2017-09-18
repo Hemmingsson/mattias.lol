@@ -1,71 +1,83 @@
 @font-face {
     font-family: universBlack;
+
     src: url(../fonts/Univers-Black-Oblique.ttf);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
+    line-height: 1;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body, html{
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  font-family: sans-serif;
-  font-size: 12px;
-  overflow: hidden;
+html {
+    overflow: hidden;
 }
 
-h1{
-  font-family: universBlack;
-  font-size: 15vw;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  font-weight: 100;
-  user-select: none;
-  padding-left: 100%;
-  animation: 3s linear 0s ticker infinite;
+body{
+    font-family: sans-serif;
+    font-size: 12px;
+
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
 }
 
 
-.contact{
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  bottom: 10vh;
+.ticker {
+    display: flex;
+
+    width: 100vw;
+    height: 100vh;
+
+    align-items: center;
 }
 
-#mute{
-  color: red;
+h1 {
+    font-family: universBlack;
+    font-size: 15vw;
+    font-weight: 100;
+    padding-left: 100vw;
+    user-select: none;
+    animation: 5.8s linear 0s ticker infinite;
+    white-space: nowrap;
+    letter-spacing: .02em;
 }
 
-a{
-  text-decoration: none;
-  margin: 0 0.15em;
-  color: blue;
+
+.contact {
+    position: absolute;
+    bottom: 30vh;
+
+    width: 100vw;
+
+    text-align: center;
 }
 
-a:visited{
-  color: blue;
+#mute {
+    color: red;
+}
+
+a {
+    margin: 0 .15em;
+
+    text-decoration: none;
+
+    color: blue;
+}
+
+a:visited {
+    color: blue;
 }
 
 @keyframes ticker {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-110%, 0, 0);
+    }
 }
-
-
-
-
-
-
-

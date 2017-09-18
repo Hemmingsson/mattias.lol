@@ -1,27 +1,28 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <h1>Mattias is Laughing out Loud</h1>
-        <div class="contact"><a href="mailto:hemmingsson.m@gmail.com">email</a> | <a href="https://github.com/Hemmingsson">github</a> | <a href="https://soundcloud.com/tjorvens">soundcloud</a> | <a id="mute" href="#">mute</a>
-        <script>
-            var laugh = new Audio('./audio/lol.mp3')
-            laugh.loop = true
-            laugh.play()
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="ticker">
+      <h1>Mattias is Laughing out Loud </h1>
+    </div>
 
-            document.getElementById('mute').onclick = function () {
-                laugh.paused ? laugh.play() : laugh.pause()
-            }
-
-        </script>
-        
-    </body>
+    <div class="contact"><a href="mailto:hemmingsson.m@gmail.com">email</a> | <a href="https://github.com/Hemmingsson">github</a> | <a href="https://soundcloud.com/tjorvens">soundcloud</a> | <a id="mute" href="#">mute</a>
+    <script>
+      var laugh = new Audio('./audio/lol.mp3')
+      laugh.loop = true
+      laugh.play()
+      document.getElementById('mute').onclick = function () {
+        laugh.paused ? laugh.play() : laugh.pause()
+      }
+    </script>
+    
+  </body>
 </html>
