@@ -20,7 +20,7 @@
       laugh.loop = true
       laugh.play()
       document.getElementById('mute').onclick = function () {
-        laugh.paused ? laugh.play() : laugh.pause()
+        laugh.paused ? laugh.muted = false : laugh.muted = true
       }
     </script>
     
