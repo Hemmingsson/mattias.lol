@@ -1,36 +1,70 @@
+@font-face {
+    font-family: universBlack;
+    src: url(../fonts/Univers-Black-Oblique.ttf);
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: 1;
 }
 
-body {
-  border: 20px solid #222;
-  box-sizing: border-box;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 26px;
-  text-align: center;
-  transition: all 2s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body{
+  position: relative;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 12px;
 }
 
 h1{
-    font-weight: normal;
+  font-family: universBlack;
+  font-size: 15vw;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  font-weight: 100;
+  user-select: none;
+  padding-left: 100%;
+  animation: 3s linear 0s ticker infinite;
 }
 
-audio {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
+
+.contact{
+  text-align: center;
+  width: 100%;
   position: absolute;
-  width: 1px;
+  bottom: 10vh;
 }
+
+#mute{
+  color: red;
+}
+
+a{
+  text-decoration: none;
+  margin: 0 0.15em;
+  color: blue;
+}
+
+a:visited{
+  color: blue;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+
+
+
+
+
 
