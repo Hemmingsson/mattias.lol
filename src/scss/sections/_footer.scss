@@ -1,0 +1,69 @@
+footer {
+    width: 100%;
+    margin-top: $spacing-xl;
+    padding: $spacing-xl 0;
+
+    color: white;
+    background-color: $color-black;
+    ::selection {
+        color: white;
+        background: lighten($color-primary, 10%); /* WebKit/Blink Browsers */
+    }
+    li {
+        @extend h3;
+    }
+    a,
+    .link {
+        cursor: pointer;
+        text-decoration: none;
+
+        color: white;
+        &:hover {
+            text-decoration: underline;
+
+            text-decoration-color: $color-primary;
+        }
+    }
+    ul {
+        margin-top: $spacing-xl;
+    }
+    li {
+        list-style: none;
+    }
+}
+
+.work {
+    margin: $spacing-l 0;
+    h4 {
+        margin: .2em 0;
+        display: inline-block;
+        span {
+            font-weight: 400;
+        }
+        &:before {
+            display: inline-block;
+
+            width: .75em;
+            height: .75em;
+            margin-right: .3em;
+
+            content: '';
+
+            background-color: $color-primary;
+        }
+    }
+    .year {
+        font-weight: 400;
+        display: block;
+        color: $color-gray;
+    }
+    p {
+        color: $color-gray;
+    }
+
+    h4:hover {
+        &:before {
+            @extend .shake;
+        }
+    }
+}

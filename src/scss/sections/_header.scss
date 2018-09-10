@@ -1,0 +1,21 @@
+header {
+    display: flex;
+
+    h1{
+      position: relative;
+    }
+
+    align-items: center;
+    padding:$spacing-xl 0; 
+    h1 span {
+        position: relative;
+
+        display: inline-block;
+
+        color: $color-primary;
+
+        @extend .shake;
+    }
+}
+
+

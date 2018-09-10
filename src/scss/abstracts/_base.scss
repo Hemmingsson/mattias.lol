@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    $BASE DEFAULTS
+\*------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    @include responsive-font(2.9vw, 10px, 30px); // For spacing REMs
+    -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+    vertical-align: top;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+body {
+    font-family: $font--primary, sans-serif;
+
+    transition: opacity 300ms;
+
+    opacity: 0;
+    background-color: white;
+
+    &.loaded {
+        opacity: 1;
+    }
+}
+
+::selection {
+    background: rgba($color-primary, .3);
+}
+
+
+.wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}

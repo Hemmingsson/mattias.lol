@@ -1,0 +1,170 @@
+
+.project {
+    &:not(:first-child) {
+        margin-top: $spacing-xl;
+    }
+    .preview {
+        width: 100%;
+        min-height: 200px;
+        margin-top: $spacing-m;
+        //background-color: lightgray;
+
+        @include respond-to('small') {
+            min-height: 400px;
+        }
+        &.__inner {
+            width: 100%;
+        }
+    }
+
+    .description {
+        margin: $spacing-m 0;
+    }
+    .button {
+        margin-bottom: .6em;
+    }
+    .links {
+        li {
+            display: inline-block;
+
+            margin-right: .2em;
+        }
+    }
+}
+
+// /*
+.favicon {
+    display: inline-block;
+
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    content: '';
+    transform: translate(0em, .17em) scale(0.9);
+
+    background-size: contain;
+}
+
+a[href*='9to5google'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/9to5google.png');
+    }
+}
+
+a[href*='news.ycombinator'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/hackernews.png');
+    }
+}
+
+a[href*='feber'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/feber.png');
+    }
+}
+
+a[href*='gizmodo'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/gizmodo.png');
+    }
+}
+a[href*='motherboard'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/motherboard.png');
+    }
+}
+a[href*='producthunt'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/producthunt.svg');
+    }
+}
+
+// */
+
+.project img {
+    width: 100%;
+}
+
+
+
+.dmwtf {
+    img {
+        width: 100%;
+
+        border-radius: 1vw;
+        box-shadow: $shadow;
+    }
+}
+
+
+
+.facepause {
+    video {
+        display: block;
+
+        width: 100%;
+        //box-shadow: $shadow;
+    }
+}
+
+.freeze {
+    position: relative;
+    .window {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 100%;
+        height: calc(100vw * 9/16);
+
+        @include respond-to('medium') {
+            height: calc(1000px * 9/16);
+        }
+    }
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: auto;
+        min-width: 100%;
+        min-height: calc(100vw * 9/16);
+
+        transform: translate(-50%, -50%);
+
+        @include respond-to('medium') {
+            min-height: calc(1000px * 9/16);
+        }
+    }
+    span.link {
+        color: $color-black;
+    }
+    .clock {
+        font-family: 'Rubik', sans-serif;
+        font-size: 6vmax;
+        font-weight: 500;
+        line-height: 1;
+
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        left: 50%;
+
+        padding: .2vmax 1.5vmax;
+
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        pointer-events: none;
+
+        color: white;
+        border-radius: .3vmax;
+        //border: 0.8vw solid white;
+        box-shadow: 0 0 0 .8vmax #fff;
+    }
+}

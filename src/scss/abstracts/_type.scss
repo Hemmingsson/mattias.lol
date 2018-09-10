@@ -1,0 +1,76 @@
+/*------------------------------------*\
+    $TYPE
+\*------------------------------------*/
+
+
+
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-weight: 800;
+
+    src: url('../static/fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+    url('../static/fonts/SpaceGrotesk-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-weight: 500;
+
+    src: url('../static/fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+    url('../static/fonts/SpaceGrotesk-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-weight: 400;
+
+    src: url('../static/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+    url('../static/fonts/SpaceGrotesk-Regular.woff') format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:500');
+
+body {
+    @include responsive-font(2.9vw, 18px, 30px);
+}
+
+
+h1 {
+    font-weight: 800;
+
+    position: relative;
+    z-index: 100;
+
+    @include responsive-font(8vw, 25px, 93px)
+    @include respond-to('large') {
+    }
+}
+
+h2 {
+    font-size: 20px; // for initial sizing only
+    line-height: 1;
+
+    width: 100%;
+    padding: .25em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: white;
+    background-color: $color-black;
+
+    @include respond-to('small') {
+        padding: .6em 1em;
+    }
+
+}
+
+h3 {
+    @include responsive-font(4.9vw, 28px, 52px)
+    font-weight: 400;
+}
+
+p {
+    font-weight: 500;
+}
