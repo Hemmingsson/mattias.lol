@@ -3,19 +3,20 @@ const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints
 
 var init = function () {
   if (isMobile) {
-    // replaceFreezyVideo()
+    replaceVideos()
   }
 }
 
-const replaceFreezyVideo = (elm, newUrl) => {
-  var preview = document.querySelector('.freeze .preview')
-  var video = preview.querySelector('video')
-  const url = video.dataset.src
-  const gifUrl = url.replace('.mp4', '.gif')
-  let $gif = document.createElement('img')
-  $gif.setAttribute('src', gifUrl)
-  video.remove()
-  preview.querySelector('.window').appendChild($gif)
+const replaceVideos = () => {
+  var $freezeVideo = document.querySelector('.freeze video')
+  var $freezeImage = document.querySelector('.freeze img.mobile')
+  $freezeImage.classList.add('lazy')
+  $freezeVideo.classList.remove('lazy')
+
+  var $facepauseVideo = document.querySelector('.facepause video')
+  var $facepauseImage = document.querySelector('.facepause img.mobile')
+  $facepauseImage.classList.add('lazy')
+  $facepauseVideo.classList.remove('lazy')
 }
 
 export default {

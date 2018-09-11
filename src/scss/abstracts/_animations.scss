@@ -1,43 +1,83 @@
-.shake{
+.shake {
+    transform-origin: 50% 50%;
     animation-name: shake;
-    animation-duration: 0.7s;
-    transform-origin:50% 50%;
-    animation-iteration-count: infinite;
+    animation-duration: .7s;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
 
 @keyframes shake {
-    0% { transform: translate(0.12vw, 0.08vw) rotate(0deg); }
-    10% { transform: translate(-0.08vw, -0.12vw) rotate(-1deg); }
-    20% { transform: translate(-0.1vw, 0px) rotate(1deg); }
-    30% { transform: translate(0px, 0.12vw) rotate(0deg); }
-    40% { transform: translate(0.08vw, -0.08vw) rotate(1deg); }
-    50% { transform: translate(-0.08vw, 0.12vw) rotate(-1deg); }
-    60% { transform: translate(-0.18vw, 0.08vw) rotate(0deg); }
-    70% { transform: translate(0.12vw, 0.08vw) rotate(-1deg); }
-    80% { transform: translate(-0.08vw, -0.08vw) rotate(1deg); }
-    90% { transform: translate(0.12vw, 0.12vw) rotate(0deg); }
-    100% { transform: translate(0.08vw, -0.12vw) rotate(-1deg); }
-}
-
-.flash{
-    animation-name: flash;
-  animation-duration: 200ms;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-    animation-timing-function:steps(0, end);
-}
-
-
-
-
-  @keyframes flash {
     0% {
-      opacity: 1;
+        transform: translate(.12vw, .08vw) rotate(0deg);
+    }
+    10% {
+        transform: translate(-.08vw, -.12vw) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-.1vw, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(0px, .12vw) rotate(0deg);
+    }
+    40% {
+        transform: translate(.08vw, -.08vw) rotate(1deg);
+    }
+    50% {
+        transform: translate(-.08vw, .12vw) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-.18vw, .08vw) rotate(0deg);
+    }
+    70% {
+        transform: translate(.12vw, .08vw) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-.08vw, -.08vw) rotate(1deg);
+    }
+    90% {
+        transform: translate(.12vw, .12vw) rotate(0deg);
+    }
+    100% {
+        transform: translate(.08vw, -.12vw) rotate(-1deg);
+    }
+}
+
+.flash {
+    position: relative;
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        content: '';
+
+        opacity: 0;
+        background-color: rgba(255, 255, 255, .21);
+    }
+    &:hover {
+        &:after {
+            animation-name: flash;
+            animation-duration: 200ms;
+            animation-timing-function: steps(0, end);
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+
+
+
+@keyframes flash {
+    0% {
+        opacity: 1;
     }
     100% {
         opacity: 0;
     }
-  }
+}

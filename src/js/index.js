@@ -8,9 +8,10 @@ import clock from './clock.js'
 import mobile from './mobile.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+  mobile.init()
   new LazyLoad({elements_selector: '.lazy'})
   fitText.init()
-  mobile.init()
+
   fetchCinemagraph.init()
   emailButton.init()
   clock.init()

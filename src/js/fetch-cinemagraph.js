@@ -24,9 +24,13 @@ const fetchNewCinemgraph = () => {
 
 const setNewCinemagraph = () => {
   const imageId = db[Math.floor(Math.random() * db.length)]
-  const $player = document.querySelector('.freeze video')
-
-  $player.src = 'https://i.imgur.com/' + imageId + '.mp4'
+  if (mobile.isMobile) {
+    const $image = document.querySelector('.freeze img.mobile')
+    $image.src = 'https://i.imgur.com/' + imageId + '.gif'
+  } else {
+    const $player = document.querySelector('.freeze video')
+    $player.src = 'https://i.imgur.com/' + imageId + '.mp4'
+  }
 }
 
 const getDataBase = () => {

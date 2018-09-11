@@ -1,5 +1,6 @@
 a,
 .link {
+  display: inline-block;
     color: $color-gray;
     white-space: nowrap;
     &:hover {
@@ -14,4 +15,56 @@ a,
 
 p .link, p a{
   color: $color-black;
+}
+
+
+.favicon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    content: '';
+    transform: translate(0em, .17em) scale(0.9);
+
+    background-size: contain;
+}
+
+a[href*='9to5google'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/9to5google.png');
+    }
+}
+
+a[href*='news.ycombinator'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/hackernews.png');
+    }
+}
+
+a[href*='feber'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/feber.png');
+    }
+}
+
+a[href*='gizmodo'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/gizmodo.png');
+    }
+}
+a[href*='motherboard'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/motherboard.png');
+    }
+}
+a[href*='producthunt'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/producthunt.svg');
+    }
 }
