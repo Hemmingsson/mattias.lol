@@ -68,3 +68,10 @@ a[href*='producthunt'] {
         background-image: url('../static/favicons/producthunt.svg');
     }
 }
+
+a[href*='inspiring.online'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/inspiringonline.jpg');
+    }
+}
