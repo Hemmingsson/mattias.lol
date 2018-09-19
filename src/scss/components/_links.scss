@@ -75,3 +75,18 @@ a[href*='inspiring.online'] {
         background-image: url('../static/favicons/inspiringonline.jpg');
     }
 }
+
+a[href*='softpedia'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/softpedia.png');
+    }
+}
+
+a[href*='webaudioweekly'] {
+    &:before {
+        @extend .favicon;
+        background-image: url('../static/favicons/webaudio.jpg');
+    }
+}
+
