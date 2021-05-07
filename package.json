@@ -16,7 +16,7 @@
     "parcel-plugin-lazy": "0.0.3"
   },
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "pointer3000": "^1.0.6",
     "textfit": "^2.3.1",
     "vanilla-lazyload": "^10.16.0-beta"
