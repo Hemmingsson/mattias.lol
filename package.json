@@ -1,24 +1,23 @@
 {
-  "name": "mattias.lol",
-  "version": "1.0.0",
-  "description": "Mattias Hemmingssons Portfolio",
-  "main": "index.js",
-  "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Mattias Hemmingsson",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "cssnano": "^4.0.5",
-    "node-sass": "^4.8.3",
-    "parcel-plugin-lazy": "0.0.3"
-  },
-  "dependencies": {
-    "lodash": "^4.17.19",
-    "pointer3000": "^1.0.6",
-    "textfit": "^2.3.1",
-    "vanilla-lazyload": "^10.16.0-beta"
-  }
+    "name": "mattias.lol",
+    "version": "1.0.0",
+    "description": "Mattias Hemmingssons Portfolio",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel src/index.html",
+        "build": "parcel build src/index.html --public-url ./ --no-minify",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Mattias Hemmingsson",
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "textfit": "^2.4.0"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.3.1",
+        "cssnano": "^5.0.17",
+        "parcel-plugin-lazyload-lozad": "^0.0.1",
+        "postcss": "^8.4.6",
+        "sass": "^1.49.7"
+    }
 }

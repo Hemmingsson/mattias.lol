@@ -2,47 +2,39 @@
     $TYPE
 \*------------------------------------*/
 
-
-
-
 @font-face {
     font-family: 'Space Grotesk';
     font-weight: 800;
 
-    src: url('../static/fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
-    url('../static/fonts/SpaceGrotesk-Bold.woff') format('woff');
+    src: url('../static/fonts/SpaceGrotesk-Bold.woff2') format('woff2'), url('../static/fonts/SpaceGrotesk-Bold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Space Grotesk';
     font-weight: 500;
 
-    src: url('../static/fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
-    url('../static/fonts/SpaceGrotesk-Medium.woff') format('woff');
+    src: url('../static/fonts/SpaceGrotesk-Medium.woff2') format('woff2'), url('../static/fonts/SpaceGrotesk-Medium.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Space Grotesk';
     font-weight: 400;
 
-    src: url('../static/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
-    url('../static/fonts/SpaceGrotesk-Regular.woff') format('woff');
+    src: url('../static/fonts/SpaceGrotesk-Regular.woff2') format('woff2'), url('../static/fonts/SpaceGrotesk-Regular.woff') format('woff');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Rubik:500');
-
 body {
-    @include responsive-font(2.9vw, 18px, 30px);
+    font-size: clamp(18px, 4vw, 30px);
 }
 
-
 h1 {
+    font-size: clamp(25px, 8vw, 93px);
     font-weight: 800;
 
     position: relative;
     z-index: 100;
 
-    @include responsive-font(8vw, 25px, 93px)
     @include respond-to('large') {
     }
 }
@@ -63,11 +55,10 @@ h2 {
     @include respond-to('small') {
         padding: .6em 1em;
     }
-
 }
 
 h3 {
-    @include responsive-font(4.9vw, 28px, 52px)
+    font-size: clamp(28px, 4.9vw, 52px);
     font-weight: 400;
 }
 

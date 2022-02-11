@@ -2,23 +2,34 @@
     font-weight: 500;
 
     display: inline-block;
+
     padding: .1em .5em .2em .5em;
+
     text-decoration: none;
+}
 
-    &.--primary {
-        
-            @extend .flash;
+.primary {
+    color: white;
+    background-color: $color-primary;
+
+    @extend .flash;
+}
+
+.secondary {
+    color: $color-black;
+    box-shadow: $color-black 0 0 0 2px inset;
+    &:hover {
         color: white;
-        background-color: $color-primary;
-
+        background-color: $color-black;
     }
-    &.--secondary {
-        color: $color-black;
-        box-shadow: $color-black 0 0 0 2px inset;
-        &:hover {
-            color: white;
-            background-color: $color-black;
-        }
+}
 
+.disabled {
+    text-decoration: line-through;
+
+    color: white;
+    background-color: $color-gray;
+    &:hover {
+        text-decoration: line-through;
     }
 }

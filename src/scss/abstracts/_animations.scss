@@ -7,7 +7,6 @@
     animation-direction: alternate;
 }
 
-
 @keyframes shake {
     0% {
         transform: translate(.12vw, .08vw) rotate(0deg);
@@ -69,9 +68,6 @@
         }
     }
 }
-
-
-
 
 @keyframes flash {
     0% {

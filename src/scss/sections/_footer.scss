@@ -7,13 +7,13 @@ footer {
     background-color: $color-black;
     ::selection {
         color: white;
-        background: lighten($color-primary, 10%); /* WebKit/Blink Browsers */
+        background: lighten($color-primary, 10%);
+        /* WebKit/Blink Browsers */
     }
     li {
         @extend h3;
     }
-    a,
-    .link {
+    a, .link {
         cursor: pointer;
         text-decoration: none;
 
@@ -35,8 +35,9 @@ footer {
 .work {
     margin: $spacing-l 0;
     h4 {
-        margin: .2em 0;
         display: inline-block;
+
+        margin: .2em 0;
         span {
             font-weight: 400;
         }
@@ -54,13 +55,14 @@ footer {
     }
     .year {
         font-weight: 400;
+
         display: block;
+
         color: $color-gray;
     }
     p {
         color: $color-gray;
     }
-
     h4:hover {
         &:before {
             @extend .shake;

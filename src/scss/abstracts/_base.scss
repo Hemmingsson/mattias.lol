@@ -9,22 +9,18 @@
 }
 
 html {
-    @include responsive-font(2.9vw, 10px, 30px); // For spacing REMs
+    font-size: clamp(10px, 2.9vw, 30px);
+
     -webkit-text-size-adjust: 100%;
 }
 
-img,
-svg {
+img, svg {
     vertical-align: top;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
     font-family: inherit;
 }
-
 
 body {
     font-family: $font--primary, sans-serif;
@@ -33,7 +29,6 @@ body {
 
     opacity: 0;
     background-color: white;
-
     &.loaded {
         opacity: 1;
     }
@@ -43,10 +38,13 @@ body {
     background: rgba($color-primary, .3);
 }
 
-
 .wrapper {
     max-width: 1040px;
     margin: 0 auto;
-    padding-left: 20px;
     padding-right: 20px;
+    padding-left: 20px;
+}
+
+.hidden {
+    display: none!important;
 }

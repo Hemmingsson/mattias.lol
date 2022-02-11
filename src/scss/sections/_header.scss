@@ -1,12 +1,11 @@
 header {
     display: flex;
-
-    h1{
-      position: relative;
-    }
-
     align-items: center;
-    padding:$spacing-xl 0; 
+
+    padding: $spacing-xl 0;
+    h1 {
+        position: relative;
+    }
     h1 span {
         position: relative;
 
@@ -17,5 +16,3 @@ header {
         @extend .shake;
     }
 }
-
-
