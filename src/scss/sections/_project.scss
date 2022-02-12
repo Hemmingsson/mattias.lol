@@ -6,13 +6,8 @@
         position: relative;
 
         width: 100%;
-        min-height: 200px;
         margin-top: $spacing-m;
         //background-color: lightgray;
-
-        @include respond-to('small') {
-            min-height: 400px;
-        }
         &.__inner {
             width: 100%;
         }
@@ -42,20 +37,9 @@
 }
 
 .project img {
+    display: block;
+
     width: 100%;
-
-    &.mobile {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-        height: 100%;
-
-        background-color: lightgray;
-    }
 }
 
 .dmwtf {
@@ -83,6 +67,7 @@
         display: block;
 
         width: 100%;
+        height: 100%;
 
         background-color: $color-gray;
     }
