@@ -22,5 +22,5 @@ var init = function() {
 }
 
 export default {
-    init,
+    init
 }

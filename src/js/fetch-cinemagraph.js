@@ -3,6 +3,20 @@ import mobile from './mobile.js'
 const dataBaseUrl = 'https://rawgit.com/Hemmingsson/Freeze/master/cinemagraphs.json'
 let db = null
 
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+      if (!entry.isIntersecting) return
+      observer.unobserve(entry.target);
+      getDataBase().then(data =>{
+        document.querySelector('.freeze .count').innerText = data.length + 1
+        db = data
+      })
+  });
+}, {
+  rootMargin: '0px 0px 200px 0px'
+});
+
 const init = () => {
   const $fetchButton = document.querySelector('.fetch')
   const $player = document.querySelector('.freeze video')
@@ -10,12 +24,10 @@ const init = () => {
   $fetchButton.addEventListener('click', fetchNewCinemgraph)
   $player.addEventListener('error', fetchNewCinemgraph)
 
-  const cinemagraphs = getDataBase().then(data =>{
-    document.querySelector('.freeze .count').innerText = data.length + 1
-  })
-
+  observer.observe($player)
 
 }
+
 
 const fetchNewCinemgraph = () => {
   if (db) { // Set new cg if db is already fetched

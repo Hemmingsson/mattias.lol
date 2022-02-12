@@ -13,13 +13,3 @@ document.addEventListener('DOMContentLoaded', () => {
     clock.init()
     lazy.init()
 })
-
-const fontsLoaded = () => {
-    document.querySelector('body').classList.add('loaded')
-}
-
-if ('fonts' in document) {
-    document.fonts.ready.then(fontsLoaded)
-} else {
-    window.onload = () => fontsLoaded
-}

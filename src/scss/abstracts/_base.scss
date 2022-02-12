@@ -25,13 +25,7 @@ button, input, select, textarea {
 body {
     font-family: $font--primary, sans-serif;
 
-    transition: opacity 300ms;
-
-    opacity: 0;
     background-color: white;
-    &.loaded {
-        opacity: 1;
-    }
 }
 
 ::selection {
