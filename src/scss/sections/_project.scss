@@ -20,16 +20,24 @@
     .description {
         margin: $spacing-m 0;
     }
-    .notice {
-        color: $color-danger;
-    }
     .links {
         li {
             display: inline-block;
 
-            margin-right: .2em;
+            margin-right: .1em;
             margin-bottom: .6em;
         }
+    }
+    .notice {
+        font-size: .6em;
+        font-weight: 300;
+
+        padding: .4em;
+
+        text-align: center;
+
+        color: $color-warning;
+        background-color: rgb(234 161 0 / 30%);
     }
 }
 

@@ -9,6 +9,12 @@ const init = () => {
 
   $fetchButton.addEventListener('click', fetchNewCinemgraph)
   $player.addEventListener('error', fetchNewCinemgraph)
+
+  const cinemagraphs = getDataBase().then(data =>{
+    document.querySelector('.freeze .count').innerText = data.length + 1
+  })
+
+
 }
 
 const fetchNewCinemgraph = () => {
